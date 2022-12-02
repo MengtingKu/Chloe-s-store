@@ -1,0 +1,32 @@
+@mixin pad {
+    @media (max-width:768px) {
+        @content
+    }
+}
+
+@mixin phone {
+    @media (max-width:569px) {
+        @content
+    }
+}
+
+@mixin hide-text {
+    text-indent: 110%;
+    white-space: nowarp;
+    overflow: hidden;
+}
+
+@mixin bgiSetup {
+    background-size: cover;
+    background-position: center center;
+    background-color: #000;
+    background-repeat: no-repeat;
+}
+
+@mixin clearFixPseudo {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}

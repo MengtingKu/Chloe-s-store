@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name='keywords' content='現金,面膜,購物'>
+    <link rel="icon" href="img/shoppingCart.ico">
+    <link rel="hex-touch-icon" href="/hw14-RWD/img/utensils-solid.svg">
+    <title>Chole's Store 寶藏店 - 訂單明細</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- BS5.2 CSS CDN links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- FontAwesome CDN links -->
+    <link rel="stylesheet" href="scss/css/shoppingCart.css">
+</head>
+
+<body>
+    <!-- headers -->
+    <header class="container-fluid fixed-top bg-light">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Logo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">首頁</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                產品資訊
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="productList.html">必敗商品</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="productList.html">Makeunder</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="productList.html">Holy white</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="favorite.html" target="_blank">收藏列表</a>
+                        </li>
+
+                    </ul>
+
+                    <div class="d-flex ms-auto">
+                        <a class="btn btn-outline-secondary" type="button" data-bs-toggle="modal"
+                            data-bs-target="#loginModal">登入</a>
+                        <a class="btn btn-secondary ms-3" type="submit" data-bs-toggle="modal"
+                            data-bs-target="#registerModal">註冊</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Modal of login -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-light text-secondary">
+                    <h5 class="modal-title fw-semibold" id="exampleModalLabel">登入 Log in</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3 needs-validation" action="" novalidate>
+                        <div class="form-group mb-3">
+                            <label for="accountInput" class="form-label my-2 ps-1">帳號</label>
+                            <input type="text" class="form-control bg-light border-0 py-2" id="accountInput"
+                                placeholder="" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="codeInput" class="form-label my-2 ps-1">密碼</label>
+                            <input type="text" class="form-control bg-light border-0 py-2" id="codeInput" placeholder=""
+                                required>
+                            <small class="d-block mt-2">
+                                <a class="link-secondary p-1 text-decoration-none" href="#">忘記密碼？</a>
+                            </small>
+                        </div>
+                        <div class="form-check ms-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">記住帳號</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">登入</button>
+                </div>
+                <p class="text-center my-4">還沒有帳號了？<a class="text-danger text-decoration-none" href="#"
+                        data-bs-toggle="modal" data-bs-target="#registerModal">註冊一個帳號</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal of register -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-light">
+                    <h5 class="modal-title fw-semibold" id="registerModalLabel">註冊服務</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3 needs-validation" action="" novalidate>
+                        <div class="form-group mb-3">
+                            <label for="accountInput" class="form-label my-2 ps-1" for="email">E-mail</label>
+                            <input class="form-control bg-light border-0 py-2" type="mail" aria-placeholder="請輸入E-mail"
+                                placeholder="" id="email" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="form-label my-2 ps-1" for="entercode">密碼</label>
+                            <input class="form-control bg-light border-0 py-2" type="password" maxlength="8"
+                                minlength="8" aria-placeholder="請輸入密碼" placeholder="英文搭配數字共8碼" id="entercode" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="form-label my-2 ps-1" for="entercode">確認密碼</label>
+                            <input class="form-control bg-light border-0 py-2" type="password" maxlength="8"
+                                minlength="8" aria-placeholder="請輸入密碼" placeholder="再次輸入上面的密碼" id="entercode" value=""
+                                required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">註冊</button>
+                </div>
+                <p class="text-center my-4">已經有帳號了？<a class="text-primary text-decoration-none" href="#"
+                        data-bs-toggle="modal" data-bs-target="#loginModal">登入</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- shoppingCart -->
+    <div class="container my-5 shoppingCart">
+        <h1 class="h2 fw-bold text-center mainFontColor my-5">
+            Chole's Store 寶藏店 - 訂單明細
+            <img class="mt-3"
+                src="https://img.pikbest.com/png-images/20191028/little-boy-pushing-a-shopping-cart-to-buy-things-gif_2515305.png!bw700"
+                alt="buy" width="100">
+        </h1>
+        <!-- 訂單進度流程 -->
+        <div class="row text-center">
+            <div class="col-12 col-sm h-75">
+                <p class="alert alert-success rounded-pill" role="alert">
+                    1.輸入訂單資料
+                </p>
+            </div>
+            <div class="col-12 col-sm">
+                <p class="alert alert-secondary rounded-pill" role="alert">
+                    2.訂單完成
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 口風琴摺疊式隱藏訂單內容 -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header bg-light d-flex justify-content-end p-2 collapsed" id="headingOne">
+                        <button class="btn text-primary collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            隱藏購物車細節
+                        </button>
+                        <p class="fs-4 ms-auto fw-bold my-auto pe-3 totalCost">$1,970</p>
+                    </h2>
+                </div>
+            </div>
+
+            <!-- 被顯示的購物車內容 -->
+            <div id="collapseOne" class="accordion-collapse collapse p-5 show" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <h3 class="section-title h2 text-center mainFontColor fw-bold mb-5"> ☆ﾟ.*･｡ 我的購物車 ｡･*.ﾟ☆ </h3>
+                    <img class="noProduct" src="https://i.imgur.com/RUPmZt1.jpg" alt="cart" height="300"
+                        style="display: none;">
+                    <table class="table px-2 align-middle">
+                        <thead class="border-bottom">
+                            <tr class="fs-4 mainFontColor">
+                                <th width="35%"></th>
+                                <th>商品名稱</th>
+                                <th width="25%">數量</th>
+                                <th class="text-end">小計</th>
+                            </tr>
+                        </thead>
+
+                        <tbody class="fw-light fs-5">
+                            <tr class="border-bottom">
+                                <td class="d-flex justify-content-md-evenly align-items-center">
+                                    <a class="subColor" href="#" data-title="3+1極致素顏面膜" data-bs-toggle="modal"
+                                        data-bs-target="#removeModal">
+                                        <i class="fa-solid fa-trash-can p-2 fa-xl"></i>
+                                    </a>
+                                    <a href="productItem1.html" target="_blank">
+                                        <img class="ms-3" src="img/productList/1-9.jpg" alt="面膜" width="60%">
+                                    </a>
+                                </td>
+                                <td> 3+1 極致素顏面膜</td>
+                                <td>
+                                    <div class="input-group input-group-sm mb-3">
+                                        <button class="input-group-text" id="addon-wrapping">
+                                            <span class="material-icons fs-5 subFontColor">remove</span>
+                                        </button>
+                                        <input class="form-control text-center subFontColor" type="text" placeholder="1"
+                                            id="staticNum">
+                                        <button class="input-group-text" id="addon-wrapping">
+                                            <span class="material-icons fs-5 subFontColor">add</span>
+                                        </button>
+                                    </div>
+                                </td>
+                                <td class="text-end">$ <span>690</span></td>
+                            </tr>
+                            <tr class="border-bottom">
+                                <td class="d-flex justify-content-md-evenly align-items-center">
+                                    <a class="subColor" href="#" data-title="HoLy WHiTe 修護凝膠" data-bs-toggle="modal"
+                                        data-bs-target="#removeModal">
+                                        <i class="fa-solid fa-trash-can p-2 fa-xl"></i>
+                                    </a>
+                                    <a href="productItem7.html" target="_blank">
+                                        <img class="ms-3" src="img/productList/7-1.jpg" alt="凝膠" width="60%">
+                                    </a>
+                                </td>
+                                <td> HoLy WHiTe 修護凝膠</td>
+                                <td>
+                                    <div class="input-group input-group-sm mb-3">
+                                        <button class="input-group-text" id="addon-wrapping">
+                                            <span class="material-icons fs-5 subFontColor">remove</span>
+                                        </button>
+                                        <input class="form-control text-center subFontColor" type="text" placeholder="1"
+                                            id="staticNum">
+                                        <button class="input-group-text" id="addon-wrapping">
+                                            <span class="material-icons fs-5 subFontColor">add</span>
+                                        </button>
+                                    </div>
+                                </td>
+                                <td class="text-end">$ <span>1,280</span></td>
+                            </tr>
+                        </tbody>
+
+                        <tfoot class="">
+                            <tr class="h5 text-end fw-bolder mainFontColor">
+                                <td class="text-start">
+                                    <a href="#" class="btn btn-outline-success">刪除所有品項</a>
+                                </td>
+                                <td colspan="2">合計</td>
+                                <td>$ <span>1,970</span></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 訂購人資訊填寫 -->
+            <h2 class="bg-light p-3 fs-4 text-center fw-semibold my-3 mainFontColor">訂購人資訊</h2>
+            <form action="" class="orderInf">
+                <div class="row g-3 my-3 justify-content-md-center orderInfo-formGroup">
+                    <label for="userName" class="col-md-2 form-label">姓名 Name</label>
+                    <div class="col-md-8">
+                        <input type="name" class="form-control" id="userName" placeholder="麥兜兜" name="姓名" required>
+                        <p class="orderInfo-message name" data-message="姓名"></p>
+                    </div>
+                </div>
+                <div class="row g-3 my-3 justify-content-md-center orderInfo-formGroup">
+                    <label for="inputEmail" class="col-md-2 form-label">電子信箱 Email</label>
+                    <div class="col-md-8">
+                        <input type="email" class="form-control" id="inputEmail" placeholder="chloe@gmail.com"
+                            name="電子信箱" required>
+                        <p class="orderInfo-message mail" data-message="電子信箱"></p>
+                    </div>
+                </div>
+                <div class="row g-3 my-3 justify-content-md-center orderInfo-formGroup">
+                    <label for="inputTel" class="col-md-2 form-label">手機電話 Tel</label>
+                    <div class="col-md-8">
+                        <input type="tel" class="form-control" id="inputTel" placeholder="0911123123" name="手機電話"
+                            required>
+                        <p class="orderInfo-message tel" data-message="手機電話"></p>
+                    </div>
+                </div>
+                <div class="row g-3 my-3 justify-content-md-center orderInfo-formGroup">
+                    <label for="inputAddress" class="col-md-2 form-label">送達地址 Address</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control is-invalid" id="inputAddress" placeholder="台北市重慶南路一段122號"
+                            name="送達地址" required>
+                        <p class="orderInfo-message address invalid-feedback" id="inputAddressFeedback"
+                            data-message="送達地址">Please provide a valid address.</p>
+                    </div>
+                </div>
+                <div class="row g-3 my-3 justify-content-md-center orderInfo-formGroup">
+                    <div class="form-check col-md-10">
+                        <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3"
+                            aria-describedby="invalidCheck3Feedback" required>
+                        <label class="form-check-label" for="invalidCheck3">
+                            同意條款和條件 Agree to terms and conditions
+                        </label>
+                        <div id="invalidCheck3Feedback" class="invalid-feedback">
+                            您必須在提交前同意。 You must agree before submitting.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 流程按鈕 -->
+                <div class="col-12 d-flex justify-content-end my-3">
+                    <a href="productList.html" class="btn btn-outline-success">繼續選購</a>
+                    <a href="shoppingOrder.html" class="btn btn-success ms-2">下一步</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- notice -->
+    <section class="notice py-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-1 text-center py-5">
+                    <i class="fa-solid fa-cart-shopping fa-2xl mainFontColor"></i>
+                </div>
+                <div class="col-10">
+                    <p class="h3 fw-bold mainFontColor lh-lg">
+                        本網站只接受「宅配到府」訂單，若您想要「超商取貨付款」或是更多元的支付方式，歡迎點擊下列連結前往「7-11賣貨便」或是「蝦皮賣場」。</p>
+                </div>
+                <div class="d-flex justify-content-evenly my-4">
+                    <a href="https://myship.7-11.com.tw/general/detail/GM2207308138884" target="_blank"><img
+                            class="rounded-circle shadow" src="/hw16-JS/JS_project/img/tinified/7-11Logo.jpg"
+                            alt="711"></a>
+
+                    <a href="https://shopee.tw/product/57813037/20422440879?smtt=0.197574087-1669696741.9"
+                        target="_blank"><img class="rounded-circle shadow"
+                            src="/hw16-JS/JS_project/img/tinified/shoppingLogo.png" alt="shopping"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- saysomething -->
+    <section class="saysomething container-fluid py-5">
+        <h2 class="h5 mainFontColor fw-bold">賣場說明：</h2>
+        <p class="subFontColor lh-lg fw-light">兜兜 Chloe 寶藏選品歡迎光臨！所有產品都是我本人使用後愛不釋手分享給大家，閉眼入都沒問題 <i
+                class="fa-solid fa-thumbs-up subFontColor"></i>
+            <br>
+            如果有好物分享要和兜兜分享，也可以與我聯繫資訊交流。
+        </p>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer py-3">
+        <div class="d-flex justify-content-center pt-2">
+            <a class="mx-2 px-1" href="javascript: void(window.open('http://line.naver.jp/R/msg/text/?'
+                .concat(encodeURIComponent('我在賣貨便開店囉！快來我的《'))
+                .concat(encodeURIComponent('現貨*保養品-兜兜愛物精選'))
+                .concat(encodeURIComponent('》賣場逛逛吧!\n'))
+                .concat(encodeURIComponent(location.href))
+                .concat(encodeURIComponent('\n'))
+                .concat(encodeURIComponent('兜兜 Chloe寶藏選品 歡迎光臨！！！所有產品都是我本人使用後愛不釋手分享給大家閉眼入都沒問題👍🏻'))
+                ));">
+                <img src="/hw16-JS/JS_project/img/tinified/line.png" alt="">
+            </a>
+            <a class="mx-2 px-1"
+                href="javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent(location.href))));">
+                <img src="/hw16-JS/JS_project/img/tinified/facebook.png" alt="">
+            </a>
+            <a class="mx-2 px-1"
+                href="javascript: void(window.open('http://www.instagram.com/share.php?u='.concat(encodeURIComponent(location.href))));">
+                <img src="/hw16-JS/JS_project/img/tinified/instagram.png" alt="">
+            </a>
+        </div>
+        <p class="text-center my-2">Copyright © 2022, 六角學院 Chloe 寶藏店, 版權所有</p>
+    </footer>
+
+    <!-- gotop -->
+    <div class="gotop">
+        <a href="#"><i class="fa-solid fa-circle-arrow-up"></i></a>
+    </div>
+
+
+
+
+
+    <script src="https://kit.fontawesome.com/750cf6100c.js" crossorigin="anonymous"></script>
+    <!-- Awesome官網jQ設定檔 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- jQ的宣告檔案，必留才能啟動 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <!-- BS5 js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <!-- BS5 JavaScript Bundle with Popper -->
+    <script src="js/index.js"></script>
+</body>
+
+</html>

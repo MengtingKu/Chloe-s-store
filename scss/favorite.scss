@@ -1,0 +1,15 @@
+@import "index";
+
+.favorite {
+    .goodsContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .goodsImg {
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}

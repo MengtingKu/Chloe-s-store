@@ -1,0 +1,25 @@
+@import "productList";
+
+$smallFontSize: 14px;
+
+.smallFS {
+    font-size: $smallFontSize;
+}
+
+.productItem1 { 
+    .breadcrumb{
+        a{
+            display: inline;
+        }
+    }   
+    .imgShader {
+        box-shadow: 0 0 15px 0 rgba(1, 226, 170, 0.5), inset 0 0 15px 0 rgba(0, 200, 150, .5);
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+    .itemContent{
+        margin-top: 7%;
+    }
+}

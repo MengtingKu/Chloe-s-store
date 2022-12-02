@@ -1,0 +1,72 @@
+@import "index";
+
+
+.content {
+    h3 {
+        position: relative;
+
+        &::after,
+        &::before {
+            content: "";
+            position: absolute;
+            height: 2.5px;
+            background-color: $mainFontColor;
+            width: 15%;
+            top: 50%;
+        }
+
+        &::before {
+            left: 0%;
+        }
+
+        &::after {
+            right: 0%;
+        }
+    }
+
+    .point {
+
+        &::after,
+        &::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid $mainFontColor;
+            background-color: $mainFontColor;
+            transform: translateX(-50%);
+        }
+
+        &::before {
+            top: 36%;
+            left: 0%;
+        }
+
+        &::after {
+            top: 36%;
+            right: -2%;
+        }
+    }
+
+    .productImg {
+        &:hover {
+            box-shadow: 0 0 15px 0 rgba(226, 162, 1, 0.5), inset 0 0 15px 0 rgba(160, 200, 0, 0.5);
+            transform: scale(1.2);
+            z-index: 1;
+        }
+    }
+
+    .productTitle {
+        border-bottom: 3px solid $mainFontColor;
+    }
+
+    .fa-heart {
+        color: grey;
+
+        &.active {
+            font-weight: bold;
+            color: red;
+        }
+    }
+}

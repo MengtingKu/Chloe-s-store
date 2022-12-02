@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name='keywords' content='面膜,素顏,天然'>
+    <link rel="icon" href="img/favicon-6.ico">
+    <title>My favourite</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- BS5.2 CSS CDN links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- FontAwesome CDN links -->
+    <link rel="stylesheet" href="scss/css/favorite.css">
+</head>
+
+<body>
+    <!-- headers -->
+    <header class="container-fluid fixed-top bg-light">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Logo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">首頁</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                產品資訊
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="productList.html">必敗商品</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="productList.html">Makeunder</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="productList.html">Holy white</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="favorite.html" target="_blank">收藏列表</a>
+                        </li>
+
+                    </ul>
+
+                    <div class="d-flex ms-auto">
+                        <a class="btn btn-outline-secondary" type="button" data-bs-toggle="modal"
+                            data-bs-target="#loginModal">登入</a>
+                        <a class="btn btn-secondary ms-3" type="submit" data-bs-toggle="modal"
+                            data-bs-target="#registerModal">註冊</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Modal of login -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-light text-secondary">
+                    <h5 class="modal-title fw-semibold" id="exampleModalLabel">登入 Log in</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3 needs-validation" action="" novalidate>
+                        <div class="form-group mb-3">
+                            <label for="accountInput" class="form-label my-2 ps-1">帳號</label>
+                            <input type="text" class="form-control bg-light border-0 py-2" id="accountInput"
+                                placeholder="" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="codeInput" class="form-label my-2 ps-1">密碼</label>
+                            <input type="text" class="form-control bg-light border-0 py-2" id="codeInput" placeholder=""
+                                required>
+                            <small class="d-block mt-2">
+                                <a class="link-secondary p-1 text-decoration-none" href="#">忘記密碼？</a>
+                            </small>
+                        </div>
+                        <div class="form-check ms-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">記住帳號</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">登入</button>
+                </div>
+                <p class="text-center my-4">還沒有帳號了？<a class="text-danger text-decoration-none" href="#"
+                        data-bs-toggle="modal" data-bs-target="#registerModal">註冊一個帳號</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal of register -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-light">
+                    <h5 class="modal-title fw-semibold" id="registerModalLabel">註冊服務</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3 needs-validation" action="" novalidate>
+                        <div class="form-group mb-3">
+                            <label for="accountInput" class="form-label my-2 ps-1" for="email">E-mail</label>
+                            <input class="form-control bg-light border-0 py-2" type="mail" aria-placeholder="請輸入E-mail"
+                                placeholder="" id="email" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="form-label my-2 ps-1" for="entercode">密碼</label>
+                            <input class="form-control bg-light border-0 py-2" type="password" maxlength="8"
+                                minlength="8" aria-placeholder="請輸入密碼" placeholder="英文搭配數字共8碼" id="entercode" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="form-label my-2 ps-1" for="entercode">確認密碼</label>
+                            <input class="form-control bg-light border-0 py-2" type="password" maxlength="8"
+                                minlength="8" aria-placeholder="請輸入密碼" placeholder="再次輸入上面的密碼" id="entercode" value=""
+                                required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">註冊</button>
+                </div>
+                <p class="text-center my-4">已經有帳號了？<a class="text-primary text-decoration-none" href="#"
+                        data-bs-toggle="modal" data-bs-target="#loginModal">登入</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- banner -->
+    <section class="banner mb-3">
+        <div class="container-fluid mt-5">
+            <div class="topic d-none d-md-block px-4 lh-lg">
+                <h3>呵護每吋肌膚只給最天然的成分</h3>
+                <p class="mb-3">安全、零負擔的成分</p>
+                <div class="input-group flex-nowrap py-2 px-5">
+                    <input type="text" class="form-control" placeholder="搜尋好物" aria-label="Searchgood"
+                        aria-describedby="addon-wrapping">
+                    <a href="#" class="input-group-text">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- my favourite -->
+    <section class="favorite mb-3">
+        <div class="container">
+            <h2 class="h2 fw-bold mainFontColor my-4"> 我的收藏 ℒℴѵℯ¨• ♡ </h2>
+            <ul class="mb-4">
+                <!-- item1 -->
+                <li class="row border rounded-3 gx-5 mb-4 shadow-sm">
+                    <!-- 左側照片 -->
+                    <div class="col-md-3 flex-shrink-0">
+                        <a href="productItem1.html" class="goodsImg">
+                            <img src="img/productList/1-9.jpg" class="img-fluid rounded-3" alt="goods">
+                        </a>
+                    </div>
+                    <!-- 右側商品文案 -->
+                    <div class="col-md-8 goodsContent">
+                        <div class="flex-grow-1">
+                            <h5 class="card-title h4 my-3 mainFontColor fw-bold"> 3+1 極致素顏面膜</h5>
+                            <p class="card-text fw-light subFontColor lh-lg my-3">
+                                一盒煥膚新生「用敷的就能扭轉肌膚奇蹟」，一盒面膜讓妳享有兩種效果， 沒有敷過它別說妳用過好用的面膜，敷完隔天就像有上粉底 app 過的皮膚！
+                            </p>
+                        </div>
+                        <div class="ms-auto my-4">
+                            <button type="button" class="btn btn-outline-success  w-100"><i
+                                    class="fa-solid fa-cart-shopping pe-2"></i> 加入購物車</button>
+                        </div>
+                    </div>
+                </li>
+                <!-- item2 -->
+                <li class="row border rounded-3 gx-5 mb-4 shadow-sm">
+                    <!-- 左側照片 -->
+                    <div class="col-md-3 flex-shrink-0">
+                        <a href="productItem3.html" class="goodsImg">
+                            <img src="img/productList/3-9.jpg" class="img-fluid rounded-3" alt="goods">
+                        </a>
+                    </div>
+                    <!-- 右側商品文案 -->
+                    <div class="col-md-8 goodsContent">
+                        <div class="flex-grow-1">
+                            <h5 class="card-title h4 my-3 mainFontColor fw-bold"> 逆時賦活精華液</h5>
+                            <p class="card-text fw-light subFontColor lh-lg my-3">
+                                「無暇美肌，水光縈繞，擁有深徹賦活肌底」，益菌保養，正式透過對肌膚有益的好菌萃取來滋養肌膚，而酵母菌萃取他能溫和的調理角質，淨化肌膚，賦活沉睡的青春能量，改善粗糙與暗沉，恢復肌膚明亮感。每天
+                                30 秒抱養，我們都能變素顏美人唷！
+                            </p>
+                        </div>
+                        <div class="ms-auto my-4">
+                            <button type="button" class="btn btn-outline-success  w-100"><i
+                                    class="fa-solid fa-cart-shopping pe-2"></i> 加入購物車</button>
+                        </div>
+                    </div>
+                </li>
+                <!-- item3 -->
+                <li class="row border rounded-3 gx-5 mb-4 shadow-sm">
+                    <!-- 左側照片 -->
+                    <div class="col-md-3 flex-shrink-0">
+                        <a href="productItem4.html" class="goodsImg">
+                            <img src="img/productList/4-9.jpg" class="img-fluid rounded-3" alt="goods">
+                        </a>
+                    </div>
+                    <!-- 右側商品文案 -->
+                    <div class="col-md-8 goodsContent">
+                        <div class="flex-grow-1">
+                            <h5 class="card-title h4 my-3 mainFontColor fw-bold"> 晚安皇后乳霜</h5>
+                            <p class="card-text fw-light subFontColor lh-lg my-3">
+                                給肌膚皇后級的細緻修護，輕輕一抹感受極致細膩的夜間修護，睡醒後來到鏡子前的那一刻，妳會看見的極光奇肌，透過指腹的輕柔按壓，褪去白天持續累積的暗沉、粗糙與疲倦感，帶給肌膚體驗宛如皇后般倍受寵愛的細膩呵護！
+                            </p>
+                        </div>
+                        <div class="ms-auto my-4">
+                            <button type="button" class="btn btn-outline-success  w-100"><i
+                                    class="fa-solid fa-cart-shopping pe-2"></i> 加入購物車</button>
+                        </div>
+                    </div>
+                </li>
+                <!-- item4 -->
+                <li class="row border rounded-3 gx-5 mb-4 shadow-sm">
+                    <!-- 左側照片 -->
+                    <div class="col-md-3 flex-shrink-0">
+                        <a href="productItem5.html" class="goodsImg">
+                            <img src="img/productList/5-9.jpg" class="img-fluid rounded-3" alt="goods">
+                        </a>
+                    </div>
+                    <!-- 右側商品文案 -->
+                    <div class="col-md-8 goodsContent">
+                        <div class="flex-grow-1">
+                            <h5 class="card-title h4 my-3 mainFontColor fw-bold"> 還原金萃</h5>
+                            <p class="card-text fw-light subFontColor lh-lg my-3">
+                                還原肌膚美麗起點，『油』你輕鬆掌握！！ 凝結大自然質萃修護力的精華油，完整滋潤包覆嬌嫩的脆弱肌膚。
+                            </p>
+                        </div>
+                        <div class="ms-auto my-4">
+                            <button type="button" class="btn btn-outline-success  w-100"><i
+                                    class="fa-solid fa-cart-shopping pe-2"></i> 加入購物車</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- saysomething -->
+    <section class="saysomething container-fluid py-5">
+        <h2 class="h5 mainFontColor fw-bold">賣場說明：</h2>
+        <p class="subFontColor lh-lg fw-light">兜兜 Chloe 寶藏選品歡迎光臨！所有產品都是我本人使用後愛不釋手分享給大家，閉眼入都沒問題 <i
+                class="fa-solid fa-thumbs-up subFontColor"></i>
+            <br>
+            如果有好物分享要和兜兜分享，也可以與我聯繫資訊交流。
+        </p>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer py-3">
+        <div class="d-flex justify-content-center pt-2">
+            <a class="mx-2 px-1" href="javascript: void(window.open('http://line.naver.jp/R/msg/text/?'
+                .concat(encodeURIComponent('我在賣貨便開店囉！快來我的《'))
+                .concat(encodeURIComponent('現貨*保養品-兜兜愛物精選'))
+                .concat(encodeURIComponent('》賣場逛逛吧!\n'))
+                .concat(encodeURIComponent(location.href))
+                .concat(encodeURIComponent('\n'))
+                .concat(encodeURIComponent('兜兜 Chloe寶藏選品 歡迎光臨！！！所有產品都是我本人使用後愛不釋手分享給大家閉眼入都沒問題👍🏻'))
+                ));">
+                <img src="/hw16-JS/JS_project/img/tinified/line.png" alt="">
+            </a>
+            <a class="mx-2 px-1"
+                href="javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent(location.href))));">
+                <img src="/hw16-JS/JS_project/img/tinified/facebook.png" alt="">
+            </a>
+            <a class="mx-2 px-1"
+                href="javascript: void(window.open('http://www.instagram.com/share.php?u='.concat(encodeURIComponent(location.href))));">
+                <img src="/hw16-JS/JS_project/img/tinified/instagram.png" alt="">
+            </a>
+        </div>
+        <p class="text-center my-2">Copyright © 2022, 六角學院 Chloe 寶藏店, 版權所有</p>
+    </footer>
+
+    <!-- gotop -->
+    <div class="gotop">
+        <a href="#"><i class="fa-solid fa-circle-arrow-up"></i></a>
+    </div>
+
+
+
+
+
+    <script src="https://kit.fontawesome.com/750cf6100c.js" crossorigin="anonymous"></script>
+    <!-- Awesome官網jQ設定檔 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- jQ的宣告檔案，必留才能啟動 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <!-- BS5 js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <!-- BS5 JavaScript Bundle with Popper -->
+    <script src="js/productList.js"></script>
+</body>
+
+</html>
