@@ -35,17 +35,17 @@ body {
 }
 
 .banner {
-    background-image: url(img/tinified/banner-3.jpg);
+    background-image: url(https://i.imgur.com/FJoP6v6.jpg);
     min-height: 450px;
     @include bgiSetup();
 
     @include pad() {
-        background-image: url(/hw16-JS/JS_project/img/tinified/banner-4.jpg);
+        background-image: url(https://i.imgur.com/x16yfqh.jpg);
         min-height: 350px;
     }
 
     @include phone() {
-        background-image: url(/hw16-JS/JS_project/img/tinified/banner-1-1.jpg);
+        background-image: url(https://i.imgur.com/1wZa2pt.jpg);
         min-height: 200px;
     }
 
