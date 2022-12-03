@@ -1,1 +1,1 @@
-# Chloe-s-store
+# ChloeStore
