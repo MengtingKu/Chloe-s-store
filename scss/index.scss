@@ -131,7 +131,7 @@ body {
             transform: translateX(-50%);
             background-color: $subColor;
 
-            @include phone {
+            @include pad {
                 display: none;
             }
         }
@@ -152,7 +152,7 @@ body {
             background-color: #fff;
             z-index: 1;
 
-            @include phone {
+            @include pad {
                 display: none;
             }
         }
