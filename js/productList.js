@@ -15,3 +15,9 @@ $(document).ready(function () {
 });
 
 
+/* JavaScript */
+let url = `http://localhost:3000/`;
+axios.get(url)
+    .then(function (response) {
+        console.log(response.data);
+    }) 
