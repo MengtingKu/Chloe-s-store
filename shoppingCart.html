@@ -136,9 +136,9 @@
                                 minlength="8" aria-placeholder="請輸入密碼" placeholder="英文搭配數字共8碼" id="entercode" required>
                         </div>
                         <div class="form-group mb-3">
-                            <label class="form-label my-2 ps-1" for="entercode">確認密碼</label>
+                            <label class="form-label my-2 ps-1" for="entercodeagain">確認密碼</label>
                             <input class="form-control bg-light border-0 py-2" type="password" maxlength="8"
-                                minlength="8" aria-placeholder="請輸入密碼" placeholder="再次輸入上面的密碼" id="entercode" value=""
+                                minlength="8" aria-placeholder="請輸入密碼" placeholder="再次輸入上面的密碼" id="entercodeagain" value=""
                                 required>
                         </div>
                     </form>
@@ -212,7 +212,7 @@
                             <tr class="border-bottom">
                                 <td class="d-flex justify-content-md-evenly align-items-center">
                                     <a class="subColor" href="#" data-title="3+1極致素顏面膜" data-bs-toggle="modal"
-                                        data-bs-target="#removeModal">
+                                        data-bs-target="#removeModal" aria-label="product">
                                         <i class="fa-solid fa-trash-can p-2 fa-xl"></i>
                                     </a>
                                     <a href="productItem1.html" target="_blank">
@@ -222,12 +222,12 @@
                                 <td> 3+1 極致素顏面膜</td>
                                 <td>
                                     <div class="input-group input-group-sm mb-3">
-                                        <button class="input-group-text" id="addon-wrapping">
+                                        <button class="input-group-text">
                                             <span class="material-icons fs-5 subFontColor">remove</span>
                                         </button>
                                         <input class="form-control text-center subFontColor" type="text" placeholder="1"
                                             id="staticNum">
-                                        <button class="input-group-text" id="addon-wrapping">
+                                        <button class="input-group-text">
                                             <span class="material-icons fs-5 subFontColor">add</span>
                                         </button>
                                     </div>
@@ -237,7 +237,7 @@
                             <tr class="border-bottom">
                                 <td class="d-flex justify-content-md-evenly align-items-center">
                                     <a class="subColor" href="#" data-title="HoLy WHiTe 修護凝膠" data-bs-toggle="modal"
-                                        data-bs-target="#removeModal">
+                                        data-bs-target="#removeModal" aria-label="product">
                                         <i class="fa-solid fa-trash-can p-2 fa-xl"></i>
                                     </a>
                                     <a href="productItem7.html" target="_blank">
@@ -247,12 +247,12 @@
                                 <td> HoLy WHiTe 修護凝膠</td>
                                 <td>
                                     <div class="input-group input-group-sm mb-3">
-                                        <button class="input-group-text" id="addon-wrapping">
+                                        <button class="input-group-text"">
                                             <span class="material-icons fs-5 subFontColor">remove</span>
                                         </button>
                                         <input class="form-control text-center subFontColor" type="text" placeholder="1"
-                                            id="staticNum">
-                                        <button class="input-group-text" id="addon-wrapping">
+                                            >
+                                        <button class="input-group-text">
                                             <span class="material-icons fs-5 subFontColor">add</span>
                                         </button>
                                     </div>
@@ -343,12 +343,12 @@
                         本網站只接受「宅配到府」訂單，若您想要「超商取貨付款」或是更多元的支付方式，歡迎點擊下列連結前往「7-11賣貨便」或是「蝦皮賣場」。</p>
                 </div>
                 <div class="d-flex justify-content-evenly my-4">
-                    <a href="https://myship.7-11.com.tw/general/detail/GM2207308138884" target="_blank"><img
+                    <a href="https://myship.7-11.com.tw/general/detail/GM2207308138884" target="_blank" rel="noopener"><img
                             class="rounded-circle shadow" src="img/tinified/7-11Logo.jpg"
                             alt="711"></a>
 
                     <a href="https://shopee.tw/product/57813037/20422440879?smtt=0.197574087-1669696741.9"
-                        target="_blank"><img class="rounded-circle shadow"
+                        target="_blank" rel="noopener"><img class="rounded-circle shadow"
                             src="img/tinified/shoppingLogo.png" alt="shopping"></a>
                 </div>
             </div>
@@ -375,15 +375,15 @@
                 .concat(encodeURIComponent(location.href))
                 .concat(encodeURIComponent('\n'))
                 .concat(encodeURIComponent('兜兜 Chloe寶藏選品 歡迎光臨！！！所有產品都是我本人使用後愛不釋手分享給大家閉眼入都沒問題👍🏻'))
-                ));">
+                ));" aria-label="line">
                 <img src="img/tinified/line.png" alt="">
             </a>
             <a class="mx-2 px-1"
-                href="javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent(location.href))));">
+                href="javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent(location.href))));" aria-label="facebook">
                 <img src="img/tinified/facebook.png" alt="">
             </a>
             <a class="mx-2 px-1"
-                href="javascript: void(window.open('http://www.instagram.com/share.php?u='.concat(encodeURIComponent(location.href))));">
+                href="javascript: void(window.open('http://www.instagram.com/share.php?u='.concat(encodeURIComponent(location.href))));" aria-label="IG">
                 <img src="img/tinified/instagram.png" alt="">
             </a>
         </div>
@@ -392,7 +392,7 @@
 
     <!-- gotop -->
     <div class="gotop">
-        <a href="#"><i class="fa-solid fa-circle-arrow-up"></i></a>
+        <a href="#"  aria-label="gototop"><i class="fa-solid fa-circle-arrow-up"></i></a>
     </div>
 
 

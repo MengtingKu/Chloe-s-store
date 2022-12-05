@@ -136,10 +136,10 @@
                                 minlength="8" aria-placeholder="請輸入密碼" placeholder="英文搭配數字共8碼" id="entercode" required>
                         </div>
                         <div class="form-group mb-3">
-                            <label class="form-label my-2 ps-1" for="entercode">確認密碼</label>
+                            <label class="form-label my-2 ps-1" for="entercodeagain">確認密碼</label>
                             <input class="form-control bg-light border-0 py-2" type="password" maxlength="8"
-                                minlength="8" aria-placeholder="請輸入密碼" placeholder="再次輸入上面的密碼" id="entercode" value=""
-                                required>
+                                minlength="8" aria-placeholder="請輸入密碼" placeholder="再次輸入上面的密碼" id="entercodeagain"
+                                value="" required>
                         </div>
                     </form>
                 </div>
@@ -180,12 +180,12 @@
                             <label for="staticNum" class="col-md-3 text-center mb-3 subFontColor">數量：</label>
                             <div class="col-md-8">
                                 <div class="input-group input-group-sm mb-3">
-                                    <button class="input-group-text" id="addon-wrapping">
+                                    <button class="input-group-text" id="addon-wrapping-1">
                                         <span class="material-icons fs-5 subFontColor">remove</span>
                                     </button>
                                     <input class="form-control text-center subFontColor" type="text" placeholder="1"
                                         id="staticNum">
-                                    <button class="input-group-text" id="addon-wrapping">
+                                    <button class="input-group-text" id="addon-wrapping-2">
                                         <span class="material-icons fs-5 subFontColor">add</span>
                                     </button>
                                 </div>
@@ -271,15 +271,17 @@
                 .concat(encodeURIComponent(location.href))
                 .concat(encodeURIComponent('\n'))
                 .concat(encodeURIComponent('兜兜 Chloe寶藏選品 歡迎光臨！！！所有產品都是我本人使用後愛不釋手分享給大家閉眼入都沒問題👍🏻'))
-                ));">
+                ));" aria-label="line">
                 <img src="img/tinified/line.png" alt="">
             </a>
             <a class="mx-2 px-1"
-                href="javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent(location.href))));">
+                href="javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent(location.href))));"
+                aria-label="facebook">
                 <img src="img/tinified/facebook.png" alt="">
             </a>
             <a class="mx-2 px-1"
-                href="javascript: void(window.open('http://www.instagram.com/share.php?u='.concat(encodeURIComponent(location.href))));">
+                href="javascript: void(window.open('http://www.instagram.com/share.php?u='.concat(encodeURIComponent(location.href))));"
+                aria-label="IG">
                 <img src="img/tinified/instagram.png" alt="">
             </a>
         </div>
@@ -288,8 +290,7 @@
 
     <!-- gotop -->
     <div class="gotop">
-        <a href="#"><i class="fa-solid fa-circle-arrow-up"></i></a>
-    </div>
+        <a href="#" aria-label="gototop"><i class="fa-solid fa-circle-arrow-up"></i></a>
 
 
 
