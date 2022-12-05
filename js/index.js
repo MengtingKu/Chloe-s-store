@@ -43,8 +43,7 @@ function saveUserToLocal({ accessToken, user }) {
 }
 
 // #Step-1: `POST` data to API
-registerBtn.addEventListener("click", register);
-function register() {
+registerBtn.addEventListener("click", function () {
     if (registerAccount.value === "" || registerPassword.value === "") {
         sweet2Error('請輸入完整資料');
         return;
@@ -54,13 +53,15 @@ function register() {
     obj.password = registerPassword.value.trim();
     axios.post(`${base_url}/register`, obj)
         .then(function (response) {
-            console.log('hello');
-            
-            sweet2Success(`註冊成功`);
+            if (response.status === 201) {
+                saveUserToLocal(response.data);
+                sweet2Success(`註冊成功`);
+                window.location.replace('/login.html');
+            }
         })
         .catch(function (error) {
             console.log(error);
         })
-}
-register()
+});
+
 
