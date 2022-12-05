@@ -43,7 +43,7 @@ function saveUserToLocal({ accessToken, user }) {
 }
 
 // #Step-1: `POST` data to API
-// registerBtn.addEventListener("click", register);
+registerBtn.addEventListener("click", register);
 function register() {
     if (registerAccount.value === "" || registerPassword.value === "") {
         sweet2Error('請輸入完整資料');
