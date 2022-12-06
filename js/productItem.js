@@ -14,10 +14,12 @@ $(document).ready(function () {
     });
 });
 
-
-/* JavaScript */
-let url = `http://localhost:3000/posts`;
-axios.get(url)
-    .then(function (response) {
-        console.log(response.data);
-    }) 
+/* 渲染產品明細內容 */
+const id = location.href.split("=")[1];
+axios.get(`${base_url}/products/${id}`)
+.then(function(response){
+    console.log(response);
+})
+.catch(function(error){
+    console.log(error);
+})
