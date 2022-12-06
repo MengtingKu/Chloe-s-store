@@ -127,13 +127,14 @@
                     <form class="row g-3 needs-validation" action="" novalidate>
                         <div class="form-group mb-3">
                             <label for="accountInput" class="form-label my-2 ps-1" for="email">E-mail</label>
-                            <input class="form-control bg-light border-0 py-2" type="mail" aria-placeholder="請輸入E-mail"
-                                placeholder="" id="email" required>
+                            <input class="form-control bg-light border-0 py-2 registerAccount" type="mail"
+                                aria-placeholder="請輸入E-mail" placeholder="" id="email" required>
                         </div>
                         <div class="form-group mb-3">
                             <label class="form-label my-2 ps-1" for="entercode">密碼</label>
-                            <input class="form-control bg-light border-0 py-2" type="password" maxlength="8"
-                                minlength="8" aria-placeholder="請輸入密碼" placeholder="英文搭配數字共8碼" id="entercode" required>
+                            <input class="form-control bg-light border-0 py-2 registerPassword" type="password"
+                                maxlength="8" minlength="8" aria-placeholder="請輸入密碼" placeholder="英文搭配數字共8碼"
+                                id="entercode" required>
                         </div>
                         <div class="form-group mb-3">
                             <label class="form-label my-2 ps-1" for="entercodeagain">確認密碼</label>
@@ -145,7 +146,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary">註冊</button>
+                    <button type="button" class="btn btn-primary registerBtn">註冊</button>
                 </div>
                 <p class="text-center my-4">已經有帳號了？<a class="text-primary text-decoration-none" href="#"
                         data-bs-toggle="modal" data-bs-target="#loginModal">登入</a></p>
@@ -184,7 +185,8 @@
                                 <li class="breadcrumb-item active" aria-current="page">所有商品</li>
                             </ol>
                         </nav>
-                        <h2 class="h4 text-center fw-bold mainFontColor w-75 mt-5"><i class="fa-brands fa-pagelines"></i>
+                        <h2 class="h4 text-center fw-bold mainFontColor w-75 mt-5"><i
+                                class="fa-brands fa-pagelines"></i>
                             真實體驗好物
                         </h2>
                         <ul class="w-75 pt-3">
@@ -214,7 +216,8 @@
                                 </h3>
                             </li>
                             <li class="mb-2"><a class="fw-light mainColor" href="productItem6.html"> 無香乳液 </a></li>
-                            <li class="mb-2"><a class="fw-light mainColor" href="productItem7.html">Holy huhu修護凝膠</a></li>
+                            <li class="mb-2"><a class="fw-light mainColor" href="productItem7.html">Holy huhu修護凝膠</a>
+                            </li>
                             <li class="mb-2"><a class="fw-light mainColor" href="productItem2.html">眼唇精萃</a></li>
                         </ul>
                     </div>
@@ -224,7 +227,7 @@
                 <div class="col-md-9 mt-4">
                     <ul class="row productWrap mt-5">
                         <!-- item1 -->
-                        <li class="col-md-6 mb-3">
+                        <!-- <li class="col-md-6 mb-3">
                             <div class="card mb-2 border-0 shadow-sm bg-body rounded h-100">
                                 <a href="productItem1.html" class="productImg">
                                     <img src="img/productList/1-1.jpg" class="card-img-top" alt="產品圖片" height="250">
@@ -255,15 +258,16 @@
                                         <button type="button" class="btn btn-outline-success w-100">加入購物車</button>
                                     </div>
                                     <div class="d-flex justify-content-end my-1">
-                                        <a class="ps-2 mx-1 fs-5" href="#" aria-label="heart"><i class="fa-regular fa-heart"></i></a>
+                                        <a class="ps-2 mx-1 fs-5" href="#" aria-label="heart"><i
+                                                class="fa-regular fa-heart"></i></a>
                                         <a class="ps-2 me-3 fs-5" href="#" aria-label="share"><i
                                                 class="fa-solid fa-share-nodes text-success"></i></a>
                                     </div>
                                 </div>
                             </div>
-                        </li>
+                        </li> -->
                         <!-- item2 -->
-                        <li class="col-md-6 mb-3">
+                        <!-- <li class="col-md-6 mb-3">
                             <div class="card mb-2 border-0 shadow-sm bg-body rounded h-100">
                                 <a href="productItem2.html" class="productImg">
                                     <img src="img/productList/2-1.jpg" class="card-img-top" alt="產品圖片" height="250">
@@ -282,11 +286,11 @@
                                     <div class="col-md-6">
 
                                         <div class="input-group input-group-sm">
-                                            <button class="input-group-text material-icons fs-5" >
+                                            <button class="input-group-text material-icons fs-5">
                                                 add
                                             </button>
                                             <input class="form-control text-center" type="text" placeholder="1">
-                                            <button class="input-group-text material-icons fs-5" >
+                                            <button class="input-group-text material-icons fs-5">
                                                 remove
                                             </button>
                                         </div>
@@ -295,15 +299,16 @@
                                         <button type="button" class="btn btn-outline-success w-100">加入購物車</button>
                                     </div>
                                     <div class="d-flex justify-content-end my-1">
-                                        <a class="ps-2 mx-1 fs-5" href="#" aria-label="heart"><i class="fa-regular fa-heart"></i></a>
+                                        <a class="ps-2 mx-1 fs-5" href="#" aria-label="heart"><i
+                                                class="fa-regular fa-heart"></i></a>
                                         <a class="ps-2 me-3 fs-5" href="#" aria-label="share"><i
                                                 class="fa-solid fa-share-nodes text-success"></i></a>
                                     </div>
                                 </div>
                             </div>
-                        </li>
+                        </li> -->
                         <!-- item3 -->
-                        <li class="col-md-6 mb-3">
+                        <!-- <li class="col-md-6 mb-3">
                             <div class="card mb-2 border-0 shadow-sm bg-body rounded h-100">
                                 <a href="productItem3.html" class="productImg">
                                     <img src="img/productList/3-1.jpg" class="card-img-top" alt="產品圖片" height="250">
@@ -335,15 +340,16 @@
                                         <button type="button" class="btn btn-outline-success w-100">加入購物車</button>
                                     </div>
                                     <div class="d-flex justify-content-end my-1">
-                                        <a class="ps-2 mx-1 fs-5" href="#" aria-label="heart"><i class="fa-regular fa-heart"></i></a>
+                                        <a class="ps-2 mx-1 fs-5" href="#" aria-label="heart"><i
+                                                class="fa-regular fa-heart"></i></a>
                                         <a class="ps-2 me-3 fs-5" href="#" aria-label="share"><i
                                                 class="fa-solid fa-share-nodes text-success"></i></a>
                                     </div>
                                 </div>
                             </div>
-                        </li>
+                        </li> -->
                         <!-- item4 -->
-                        <li class="col-md-6 mb-3">
+                        <!-- <li class="col-md-6 mb-3">
                             <div class="card mb-2 border-0 shadow-sm bg-body rounded h-100">
                                 <a href="productItem4.html" class="productImg">
                                     <img src="img/productList/4-1.jpg" class="card-img-top" alt="產品圖片" height="250">
@@ -375,15 +381,16 @@
                                         <button type="button" class="btn btn-outline-success w-100">加入購物車</button>
                                     </div>
                                     <div class="d-flex justify-content-end my-1">
-                                        <a class="ps-2 mx-1 fs-5" href="#" aria-label="heart"><i class="fa-regular fa-heart"></i></a>
+                                        <a class="ps-2 mx-1 fs-5" href="#" aria-label="heart"><i
+                                                class="fa-regular fa-heart"></i></a>
                                         <a class="ps-2 me-3 fs-5" href="#" aria-label="share"><i
                                                 class="fa-solid fa-share-nodes text-success"></i></a>
                                     </div>
                                 </div>
                             </div>
-                        </li>
+                        </li> -->
                         <!-- item5 -->
-                        <li class="col-md-6 mb-3">
+                        <!-- <li class="col-md-6 mb-3">
                             <div class="card mb-2 border-0 shadow-sm bg-body rounded h-100">
                                 <a href="productItem5.html" class="productImg">
                                     <img src="img/productList/5-1.jpg" class="card-img-top" alt="產品圖片" height="250">
@@ -416,15 +423,16 @@
                                         <button type="button" class="btn btn-outline-success w-100">加入購物車</button>
                                     </div>
                                     <div class="d-flex justify-content-end my-1">
-                                        <a class="ps-2 mx-1 fs-5" href="#" aria-label="heart"><i class="fa-regular fa-heart"></i></a>
+                                        <a class="ps-2 mx-1 fs-5" href="#" aria-label="heart"><i
+                                                class="fa-regular fa-heart"></i></a>
                                         <a class="ps-2 me-3 fs-5" href="#" aria-label="share"><i
                                                 class="fa-solid fa-share-nodes text-success"></i></a>
                                     </div>
                                 </div>
                             </div>
-                        </li>
+                        </li> -->
                         <!-- item6 -->
-                        <li class="col-md-6 mb-3">
+                        <!-- <li class="col-md-6 mb-3">
                             <div class="card mb-2 border-0 shadow-sm bg-body rounded h-100">
                                 <a href="productItem6.html" class="productImg">
                                     <img src="img/productList/6-1.jpg" class="card-img-top" alt="產品圖片" height="250">
@@ -456,15 +464,16 @@
                                         <button type="button" class="btn btn-outline-success w-100">加入購物車</button>
                                     </div>
                                     <div class="d-flex justify-content-end my-1">
-                                        <a class="ps-2 mx-1 fs-5" href="#" aria-label="heart"><i class="fa-regular fa-heart"></i></a>
+                                        <a class="ps-2 mx-1 fs-5" href="#" aria-label="heart"><i
+                                                class="fa-regular fa-heart"></i></a>
                                         <a class="ps-2 me-3 fs-5" href="#" aria-label="share"><i
                                                 class="fa-solid fa-share-nodes text-success"></i></a>
                                     </div>
                                 </div>
                             </div>
-                        </li>
+                        </li> -->
                         <!-- item7 -->
-                        <li class="col-md-6 mb-3">
+                        <!-- <li class="col-md-6 mb-3">
                             <div class="card mb-2 border-0 shadow-sm bg-body rounded h-100">
                                 <a href="productItem7.html" class="productImg">
                                     <img src="img/productList/7-1.jpg" class="card-img-top" alt="產品圖片" height="250">
@@ -496,13 +505,14 @@
                                         <button type="button" class="btn btn-outline-success w-100">加入購物車</button>
                                     </div>
                                     <div class="d-flex justify-content-end my-1">
-                                        <a class="ps-2 mx-1 fs-5" href="#" aria-label="heart"><i class="fa-regular fa-heart"></i></a>
+                                        <a class="ps-2 mx-1 fs-5" href="#" aria-label="heart"><i
+                                                class="fa-regular fa-heart"></i></a>
                                         <a class="ps-2 me-3 fs-5" href="#" aria-label="share"><i
                                                 class="fa-solid fa-share-nodes text-success"></i></a>
                                     </div>
                                 </div>
                             </div>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
 
@@ -555,20 +565,21 @@
 
 
 
-    <script src="https://kit.fontawesome.com/750cf6100c.js" crossorigin="anonymous"></script>
-    <!-- Awesome官網jQ設定檔 -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <!-- jQ的宣告檔案，必留才能啟動 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script>
-    <!-- BS5 js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
-    <!-- BS5 JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-    <script src="js/productList.js"></script>
+        <script src="https://kit.fontawesome.com/750cf6100c.js" crossorigin="anonymous"></script>
+        <!-- Awesome官網jQ設定檔 -->
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <!-- jQ的宣告檔案，必留才能啟動 -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+        <!-- BS5 js -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+            crossorigin="anonymous"></script>
+        <!-- BS5 JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+        <script src="js/index.js"></script>
 </body>
 
 </html>
