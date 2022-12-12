@@ -5,19 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name='keywords' content='現金,面膜,購物'>
-    <link rel="icon" href="img/shoppingCart.ico">
-    <link rel="hex-touch-icon" href="/hw14-RWD/img/utensils-solid.svg">
-    <title>Chole's Store 寶藏店 - 訂單完成</title>
+    <link rel="icon" href="img/personal-security.ico">
+    <title>管理者後台</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <!-- BS5.2 CSS CDN links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <!-- FontAwesome CDN links -->
-    <link rel="stylesheet" href="scss/css/shoppingCart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.18/c3.css">
+    <link rel="stylesheet" href="scss/css/admin.css">
 </head>
 
 <body>
@@ -60,7 +60,7 @@
                             <a class="nav-link" href="shoppingCart.html">購物車</a>
                         </li>
                         <li class="nav-item admin d-none">
-                            <a class="nav-link" href="admin.html"> iDashboard </a>
+                            <a class="nav-link" href="admin.html" > iDashboard </a>
                         </li>
                     </ul>
                     <div class="d-flex ms-auto">
@@ -206,159 +206,41 @@
         </div>
     </div>
 
-    <!-- shoppingCart -->
-    <div class="container my-5 shoppingCart">
-        <h1 class="h2 fw-bold text-center mainFontColor my-5">
-            Chole's Store 寶藏店 - 訂單完成
-            <img class="mt-3"
-                src="https://img.pikbest.com/png-images/20191028/little-boy-pushing-a-shopping-cart-to-buy-things-gif_2515305.png!bw700"
-                alt="buy" width="100">
-        </h1>
-        <!-- 訂單進度流程 -->
-        <div class="row text-center">
-            <div class="col-12 col-sm h-75">
-                <p class="alert alert-secondary rounded-pill" role="alert">
-                    1.輸入訂單資料
-                </p>
+    <!-- 統計數量來源-圖表呈現 -->
+    <section class="mt-5">
+        <div class="row mt-5">
+            <div class="col-md-6 mt-3">
+                <div class="card rounded-0">
+                    <div class="card-header"> 優質商品廠商來源比例分析 </div>
+                    <div class="card-body d-flex justify-content-center align-items-center">
+
+                        <div id="chart"></div>
+
+                    </div>
+
+                </div>
             </div>
-            <div class="col-12 col-sm">
-                <p class="alert alert-success rounded-pill" role="alert">
-                    2.訂單完成
-                </p>
+            <div class="col-md-6 mt-3">
+                <div class="card rounded-0 h-100">
+                    <div class="card-header"> 客戶收藏商品分析 </div>
+                    <div class="card-body d-flex justify-content-center align-items-center">
+
+                        <div id="chart1"></div>
+
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- 訂單內容 -->
-        <div class="row justify-content-center mt-5">
-            <div class="col-md-8">
-                <h2 class="bg-light p-3 fs-4 text-center fw-semibold my-3 mainFontColor">購買資訊</h2>
-                <!-- 購物車內容 -->
-                <table class="table table-hover px-2 align-middle">
-                    <thead class="border-bottom">
-                        <tr class="fs-4 mainFontColor">
-                            <th width="35%"></th>
-                            <th>商品名稱</th>
-                            <th class="text-end" width="20%">數量</th>
-                            <th class="text-end" width="20%">小計</th>
-                        </tr>
-                    </thead>
 
-                    <tbody class="fw-light fs-5">
-                        <tr class="border-bottom">
-                            <td>
-                                <img class="ms-3 border rounded" src="img/productList/1-9.jpg" alt="面膜" width="50%">
-                            </td>
-                            <td> 3+1 極致素顏面膜</td>
-                            <td class="text-end">1</td>
-                            <td class="text-end">$ <span>690</span></td>
-                        </tr>
-                        <tr class="border-bottom">
-                            <td>
-                                <img class="ms-3 border rounded" src="img/productList/7-1.jpg" alt="面膜" width="50%">
-                            </td>
-                            <td> HoLy WHiTe 修護凝膠</td>
-                            <td class="text-end">1</td>
-                            <td class="text-end">$ <span>1,280</span></td>
-                        </tr>
-                    </tbody>
-
-                    <tfoot>
-                        <tr class="h5 text-end fw-bolder mainFontColor">
-                            <td colspan="3">合計</td>
-                            <td>$ <span>1,970</span></td>
-                        </tr>
-                    </tfoot>
-                </table>
-
-                <!-- 訂購人資訊 -->
-                <h2 class="bg-light p-3 fs-4 text-center fw-semibold my-5 mainFontColor">訂購人資訊</h2>
-                <table class="table table-hover px-2 align-middle fw-light">
-                    <tbody>
-                        <tr class="border-bottom" height="50">
-                            <th class="fw-bold" scope="row" width="30%">姓名</th>
-                            <td>Luan Ku</td>
-                        </tr>
-                        <tr class="border-bottom" height="50">
-                            <th class="fw-bold" scope="row" width="30%">Email</th>
-                            <td>123***@gmail.com</td>
-                        </tr>
-                        <tr class="border-bottom" height="50">
-                            <th class="fw-bold" scope="row" width="30%">電話</th>
-                            <td>0987654***</td>
-                        </tr>
-                        <tr class="border-bottom" class="border-white" height="50">
-                            <th class="fw-bold" scope="row" width="30%">地址</th>
-                            <td>重慶南路一段122號</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <!-- notice -->
-    <section class="notice py-5">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-1 text-center py-5">
-                    <i class="fa-solid fa-cart-shopping fa-2xl mainFontColor"></i>
-                </div>
-                <div class="col-10">
-                    <p class="h3 fw-bold mainFontColor lh-lg">
-                        本網站只接受「宅配到府」訂單，若您想要「超商取貨付款」或是更多元的支付方式，歡迎點擊下列連結前往「7-11賣貨便」或是「蝦皮賣場」。</p>
-                </div>
-                <div class="d-flex justify-content-evenly my-4">
-                    <a href="https://myship.7-11.com.tw/general/detail/GM2207308138884" target="_blank"
-                        rel="noopener"><img class="rounded-circle shadow" src="img/tinified/7-11Logo.jpg" alt="711"></a>
-
-                    <a href="https://shopee.tw/product/57813037/20422440879?smtt=0.197574087-1669696741.9"
-                        target="_blank" rel="noopener"><img class="rounded-circle shadow"
-                            src="img/tinified/shoppingLogo.png" alt="shopping"></a>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- saysomething -->
-    <section class="saysomething container-fluid py-5">
-        <h2 class="h5 mainFontColor fw-bold">賣場說明：</h2>
-        <p class="subFontColor lh-lg fw-light">兜兜 Chloe 寶藏選品歡迎光臨！所有產品都是我本人使用後愛不釋手分享給大家，閉眼入都沒問題 <i
-                class="fa-solid fa-thumbs-up subFontColor"></i>
-            <br>
-            如果有好物分享要和兜兜分享，也可以與我聯繫資訊交流。
-        </p>
-    </section>
 
-    <!-- footer -->
-    <footer class="footer py-3">
-        <div class="d-flex justify-content-center pt-2">
-            <a class="mx-2 px-1" href="javascript: void(window.open('http://line.naver.jp/R/msg/text/?'
-                .concat(encodeURIComponent('我在賣貨便開店囉！快來我的《'))
-                .concat(encodeURIComponent('現貨*保養品-兜兜愛物精選'))
-                .concat(encodeURIComponent('》賣場逛逛吧!\n'))
-                .concat(encodeURIComponent(location.href))
-                .concat(encodeURIComponent('\n'))
-                .concat(encodeURIComponent('兜兜 Chloe寶藏選品 歡迎光臨！！！所有產品都是我本人使用後愛不釋手分享給大家閉眼入都沒問題👍🏻'))
-                ));" aria-label="line">
-                <img src="img/tinified/line.png" alt="">
-            </a>
-            <a class="mx-2 px-1"
-                href="javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent(location.href))));"
-                aria-label="facebook">
-                <img src="img/tinified/facebook.png" alt="">
-            </a>
-            <a class="mx-2 px-1"
-                href="javascript: void(window.open('http://www.instagram.com/share.php?u='.concat(encodeURIComponent(location.href))));"
-                aria-label="IG">
-                <img src="img/tinified/instagram.png" alt="">
-            </a>
-        </div>
-        <p class="text-center my-2">Copyright © 2022, 六角學院 Chloe 寶藏店, 版權所有</p>
-    </footer>
 
-    <!-- gotop -->
-    <div class="gotop">
-        <a href="#" aria-label="gototop"><i class="fa-solid fa-circle-arrow-up"></i></a>
-    </div>
+
+
+
+
 
     <script src="https://kit.fontawesome.com/750cf6100c.js" crossorigin="anonymous"></script>
     <!-- Awesome官網jQ設定檔 -->
@@ -372,11 +254,13 @@
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"></script>
     <!-- BS5 JavaScript Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.18/c3.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script src="js/config.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/admin.js"></script>
 </body>
 
 </html>

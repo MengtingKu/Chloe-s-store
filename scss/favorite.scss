@@ -1,6 +1,45 @@
 @import "index";
 
 .favorite {
+    .noData {
+        position: relative;
+        height: 50vh;
+        background: linear-gradient(45deg, rgb(226, 220, 149) 0, rgb(173, 229, 135) 50%, #fff 50%);
+
+        &::before {
+            content: "沒有您的收藏 •̀.̫•́✧";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgb(8, 85, 134);
+            font-size: 88px;
+            white-space: nowrap;
+            mix-blend-mode: difference;
+            animation: move 3s infinite linear alternate;
+        }
+    }
+
+    @keyframes move {
+        0% {
+            transform: translate(-30%, -50%);
+        }
+
+        100% {
+            transform: translate(-70%, -50%);
+        }
+    }
+
+    .btn-outline-warning {
+        box-shadow: 2px 2px 2px rgba(215, 212, 212, 0.751);
+
+        &:hover {
+            background-color: red;
+            color: #fff;
+
+        }
+    }
+
     .goodsContent {
         display: flex;
         flex-direction: column;

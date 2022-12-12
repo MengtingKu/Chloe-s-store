@@ -36,7 +36,6 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="index.html">首頁</a>
                         </li>
-
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
@@ -54,63 +53,70 @@
                                 <li><a class="dropdown-item" href="productList.html">Holy white</a></li>
                             </ul>
                         </li>
-
                         <li class="nav-item">
-                            <a class="nav-link" href="favorite.html" target="_blank">收藏列表</a>
+                            <a class="nav-link" href="favorite.html">收藏列表</a>
                         </li>
-
                         <li class="nav-item">
-                            <a class="nav-link" href="shoppingCart.html" target="_blank">購物車</a>
+                            <a class="nav-link" href="shoppingCart.html">購物車</a>
                         </li>
-
+                        <li class="nav-item admin d-none">
+                            <a class="nav-link" href="admin.html"> iDashboard </a>
+                        </li>
                     </ul>
-
                     <div class="d-flex ms-auto">
-                        <a class="btn btn-outline-secondary" type="button" data-bs-toggle="modal"
-                            data-bs-target="#loginModal">登入</a>
-                        <a class="btn btn-secondary ms-3" type="submit" data-bs-toggle="modal"
-                            data-bs-target="#registerModal">註冊</a>
+                        <ul class="navbar-nav js-user-menu"></ul>
+                        <div class="headerBtnGroup">
+                            <a class="btn btn-outline-success ms-3" type="submit" data-bs-toggle="modal"
+                                data-bs-target="#registerModal">註冊</a>
+                            <a class="btn btn-success ms-3" type="button" data-bs-toggle="modal"
+                                data-bs-target="#loginModal">登入</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
+
     <!-- Modal of login -->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header bg-light text-secondary">
-                    <h5 class="modal-title fw-semibold" id="exampleModalLabel">登入 Log in</h5>
+                    <h5 class="modal-title fw-semibold mainFontColor" id="exampleModalLabel">登入 Log in</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form class="row g-3 needs-validation" action="" novalidate>
+                    <form class="row g-3 needs-validation loginForm" action="" novalidate>
                         <div class="form-group mb-3">
-                            <label for="accountInput" class="form-label my-2 ps-1">帳號</label>
-                            <input type="text" class="form-control bg-light border-0 py-2" id="accountInput"
-                                placeholder="" required>
+                            <label for="accountInput" class="form-label my-2 ps-1 mainFontColor">帳號</label>
+                            <input type="mail" class="form-control bg-light border-0 py-2" id="accountInput"
+                                placeholder="註冊 E-mail" name="登入帳號" required>
+                            <p class="text-danger" data-msg="登入帳號"></p>
                         </div>
-                        <div class="form-group mb-3">
-                            <label for="codeInput" class="form-label my-2 ps-1">密碼</label>
-                            <input type="text" class="form-control bg-light border-0 py-2" id="codeInput" placeholder=""
-                                required>
-                            <small class="d-block mt-2">
+                        <div class="form-group mb-3 eyes">
+                            <label for="codeInput" class="form-label my-2 ps-1 mainFontColor">密碼</label>
+                            <input type="password" class="form-control bg-light border-0 py-2 " id="codeInput"
+                                placeholder="英文搭配數字共8碼" name="登入密碼" maxlength="8" required>
+                            <p class="text-danger" data-msg="登入密碼"></p>
+                            <i class="fa-solid fa-eye-slash watchL"></i>
+                            <!-- <small class="d-block mt-2">
                                 <a class="link-secondary p-1 text-decoration-none" href="#">忘記密碼？</a>
-                            </small>
+                            </small> -->
                         </div>
                         <div class="form-check ms-2">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                            <label class="form-check-label" for="flexCheckChecked">記住帳號</label>
+                            <label class="form-check-label mainFontColor" for="flexCheckChecked">記住帳號</label>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary">登入</button>
+                    <button type="button" class="btn btn-success loginBtn">登入</button>
                 </div>
-                <p class="text-center my-4">還沒有帳號了？<a class="text-danger text-decoration-none" href="#"
-                        data-bs-toggle="modal" data-bs-target="#registerModal">註冊一個帳號</a></p>
+                <!-- <pre class="js-msg m-3 loginAlertStyle"></pre> -->
+                <p class="text-center my-4 mainColor">還沒有帳號嗎？<a class="text-success text-decoration-none d-inline ps-1"
+                        href="#" data-bs-toggle="modal" data-bs-target="#registerModal">註冊一個帳號 ♡˙︶˙♡</a></p>
             </div>
         </div>
     </div>
@@ -120,35 +126,82 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-light">
-                    <h5 class="modal-title fw-semibold" id="registerModalLabel">註冊服務</h5>
+                    <h5 class="modal-title fw-semibold mainFontColor" id="registerModalLabel">註冊服務</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form class="row g-3 needs-validation" action="" novalidate>
+                    <form class="row g-3 needs-validation registerForm" action="" novalidate>
                         <div class="form-group mb-3">
-                            <label for="accountInput" class="form-label my-2 ps-1" for="email">E-mail</label>
-                            <input class="form-control bg-light border-0 py-2" type="mail" aria-placeholder="請輸入E-mail"
-                                placeholder="" id="email" required>
-                        </div>
-                        <div class="form-group mb-3">
-                            <label class="form-label my-2 ps-1" for="entercode">密碼</label>
-                            <input class="form-control bg-light border-0 py-2" type="password" maxlength="8"
-                                minlength="8" aria-placeholder="請輸入密碼" placeholder="英文搭配數字共8碼" id="entercode" required>
-                        </div>
-                        <div class="form-group mb-3">
-                            <label class="form-label my-2 ps-1" for="entercodeagain">確認密碼</label>
-                            <input class="form-control bg-light border-0 py-2" type="password" maxlength="8"
-                                minlength="8" aria-placeholder="請輸入密碼" placeholder="再次輸入上面的密碼" id="entercodeagain" value=""
+                            <label for="accountInput" class="form-label my-2 ps-1 mainFontColor" for="email">帳號</label>
+                            <input class="form-control bg-light border-0 py-2 registerAccount" type="mail"
+                                aria-placeholder="請輸入E-mail" placeholder="請輸入E-mail" id="email" name="帳號" value=""
                                 required>
+                            <p class="text-danger" data-msg="帳號"></p>
+                        </div>
+                        <div class="form-group mb-3 eyes">
+                            <label class="form-label my-2 ps-1 mainFontColor" for="entercode">密碼</label>
+                            <input class="form-control bg-light border-0 py-2 registerPassword" type="password"
+                                maxlength="8" minlength="8" aria-placeholder="請輸入密碼" placeholder="英文搭配數字共8碼" value=""
+                                id="entercode" name="密碼" required>
+                            <i class="fa-solid fa-eye-slash watchR"></i>
+                            <p class="text-danger" data-msg="密碼"></p>
+                        </div>
+                        <div class="form-group mb-3 eyes">
+                            <label class="form-label my-2 ps-1 mainFontColor" for="entercodeagain">確認密碼</label>
+                            <input class="form-control bg-light border-0 py-2 registerPasswordCheck" type="password"
+                                maxlength="8" minlength="8" aria-placeholder="請輸入密碼" placeholder="再次輸入上面的密碼"
+                                id="entercodeagain" value="" name="確認密碼" required>
+                            <i class="fa-solid fa-eye-slash watchRC"></i>
+                            <p class="text-danger" data-msg="確認密碼"></p>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary">註冊</button>
+                    <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-success registerBtn">註冊</button>
                 </div>
-                <p class="text-center my-4">已經有帳號了？<a class="text-primary text-decoration-none" href="#"
-                        data-bs-toggle="modal" data-bs-target="#loginModal">登入</a></p>
+                <p class="text-center my-4 mainColor">已經有帳號了？<a class="text-success text-decoration-none d-inline ps-1"
+                        href="#" data-bs-toggle="modal" data-bs-target="#loginModal">登入 (*´∀`)~♥ </a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal of change password -->
+    <div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-light">
+                    <h5 class="modal-title fw-semibold mainFontColor" id="changePasswordModalLabel">修改密碼 Change Password
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3 needs-validation changePasswordForm" action="" novalidate>
+                        <div class="form-group mb-3 eyes">
+                            <label class="form-label my-2 ps-1 mainFontColor" for="changeCode">設定新密碼 </label>
+                            <input class="form-control bg-light border-0 py-2 changePassword" type="password"
+                                maxlength="8" minlength="8" aria-placeholder="請輸入密碼" placeholder="英文搭配數字共8碼" value=""
+                                id="changeCode" name="設定新密碼" required>
+                            <i class="fa-solid fa-eye-slash watch"></i>
+                            <p class="text-danger" data-msg="設定新密碼"></p>
+                        </div>
+                        <div class="form-group mb-3 eyes">
+                            <label class="form-label my-2 ps-1 mainFontColor" for="changeCodeAgain">確認密碼</label>
+                            <input class="form-control bg-light border-0 py-2 changePasswordCheck" type="password"
+                                maxlength="8" minlength="8" aria-placeholder="請輸入密碼" placeholder="再次輸入上面的密碼"
+                                id="changeCodeAgain" value="" name="確認新密碼" required>
+                            <i class="fa-solid fa-eye-slash watch1"></i>
+                            <p class="text-danger" data-msg="確認新密碼"></p>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">取消 <i
+                            class="fa-solid fa-xmark ps-1"></i></button>
+                    <button type="button" class="btn btn-success changeCodeBtn">更新 <i
+                            class="fa-sharp fa-solid fa-pen-to-square ps-1"></i></button>
+                </div>
             </div>
         </div>
     </div>
@@ -175,7 +228,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- 口風琴摺疊式隱藏訂單內容 -->
     <div class="row justify-content-center mt-5">
         <div class="col-md-8">
@@ -201,15 +254,16 @@
                     <table class="table px-2 align-middle">
                         <thead class="border-bottom">
                             <tr class="fs-4 mainFontColor">
-                                <th width="35%"></th>
+                                <th width="22%"></th>
                                 <th>商品名稱</th>
-                                <th width="25%">數量</th>
+                                <th width="15%">單價</th>
+                                <th width="20%">數量</th>
                                 <th class="text-end">小計</th>
                             </tr>
                         </thead>
 
-                        <tbody class="fw-light fs-5">
-                            <tr class="border-bottom">
+                        <tbody class="fw-light fs-5 cartableList">
+                            <!-- <tr class="border-bottom">
                                 <td class="d-flex justify-content-md-evenly align-items-center">
                                     <a class="subColor" href="#" data-title="3+1極致素顏面膜" data-bs-toggle="modal"
                                         data-bs-target="#removeModal" aria-label="product">
@@ -233,8 +287,8 @@
                                     </div>
                                 </td>
                                 <td class="text-end">$ <span>690</span></td>
-                            </tr>
-                            <tr class="border-bottom">
+                            </tr> -->
+                            <!-- <tr class="border-bottom">
                                 <td class="d-flex justify-content-md-evenly align-items-center">
                                     <a class="subColor" href="#" data-title="HoLy WHiTe 修護凝膠" data-bs-toggle="modal"
                                         data-bs-target="#removeModal" aria-label="product">
@@ -248,17 +302,17 @@
                                 <td>
                                     <div class="input-group input-group-sm mb-3">
                                         <button class="input-group-text"">
-                                            <span class="material-icons fs-5 subFontColor">remove</span>
+                                            <span class=" material-icons fs-5 subFontColor">remove</span>
                                         </button>
-                                        <input class="form-control text-center subFontColor" type="text" placeholder="1"
-                                            >
+                                        <input class="form-control text-center subFontColor" type="text"
+                                            placeholder="1">
                                         <button class="input-group-text">
                                             <span class="material-icons fs-5 subFontColor">add</span>
                                         </button>
                                     </div>
                                 </td>
                                 <td class="text-end">$ <span>1,280</span></td>
-                            </tr>
+                            </tr> -->
                         </tbody>
 
                         <tfoot class="">
@@ -266,7 +320,7 @@
                                 <td class="text-start">
                                     <a href="#" class="btn btn-outline-success">刪除所有品項</a>
                                 </td>
-                                <td colspan="2">合計</td>
+                                <td colspan="3">合計</td>
                                 <td>$ <span>1,970</span></td>
                             </tr>
                         </tfoot>
@@ -343,9 +397,8 @@
                         本網站只接受「宅配到府」訂單，若您想要「超商取貨付款」或是更多元的支付方式，歡迎點擊下列連結前往「7-11賣貨便」或是「蝦皮賣場」。</p>
                 </div>
                 <div class="d-flex justify-content-evenly my-4">
-                    <a href="https://myship.7-11.com.tw/general/detail/GM2207308138884" target="_blank" rel="noopener"><img
-                            class="rounded-circle shadow" src="img/tinified/7-11Logo.jpg"
-                            alt="711"></a>
+                    <a href="https://myship.7-11.com.tw/general/detail/GM2207308138884" target="_blank"
+                        rel="noopener"><img class="rounded-circle shadow" src="img/tinified/7-11Logo.jpg" alt="711"></a>
 
                     <a href="https://shopee.tw/product/57813037/20422440879?smtt=0.197574087-1669696741.9"
                         target="_blank" rel="noopener"><img class="rounded-circle shadow"
@@ -379,11 +432,13 @@
                 <img src="img/tinified/line.png" alt="">
             </a>
             <a class="mx-2 px-1"
-                href="javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent(location.href))));" aria-label="facebook">
+                href="javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent(location.href))));"
+                aria-label="facebook">
                 <img src="img/tinified/facebook.png" alt="">
             </a>
             <a class="mx-2 px-1"
-                href="javascript: void(window.open('http://www.instagram.com/share.php?u='.concat(encodeURIComponent(location.href))));" aria-label="IG">
+                href="javascript: void(window.open('http://www.instagram.com/share.php?u='.concat(encodeURIComponent(location.href))));"
+                aria-label="IG">
                 <img src="img/tinified/instagram.png" alt="">
             </a>
         </div>
@@ -392,7 +447,7 @@
 
     <!-- gotop -->
     <div class="gotop">
-        <a href="#"  aria-label="gototop"><i class="fa-solid fa-circle-arrow-up"></i></a>
+        <a href="#" aria-label="gototop"><i class="fa-solid fa-circle-arrow-up"></i></a>
     </div>
 
 
@@ -411,7 +466,12 @@
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"></script>
     <!-- BS5 JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="js/config.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 
 </html>

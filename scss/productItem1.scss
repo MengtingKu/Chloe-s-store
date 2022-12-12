@@ -1,4 +1,6 @@
+@import "index";
 @import "productList";
+
 
 $smallFontSize: 14px;
 
@@ -6,7 +8,7 @@ $smallFontSize: 14px;
     font-size: $smallFontSize;
 }
 
-.productItem1 { 
+.productItem { 
     .breadcrumb{
         a{
             display: inline;

@@ -34,6 +34,21 @@ body {
     font-weight: bold;
 }
 
+.loginAlertStyle {
+    font-size: 10px;
+    color: red;
+}
+
+.eyes {
+    position: relative;
+
+    .fa-eye, .fa-eye-slash {
+        position: absolute;
+        right: 2%;
+        top: 20%;
+    }
+}
+
 .banner {
     background-image: url(https://i.imgur.com/FJoP6v6.jpg);
     min-height: 450px;
@@ -157,6 +172,10 @@ body {
             }
         }
     }
+
+    .timeline-pointer:nth-child(2) {
+        flex-direction: row-reverse;
+    }
 }
 
 .notice {
@@ -188,6 +207,7 @@ body {
 
 .saysomething {
     border-top: 2px dashed $subFontColor;
+
     .fa-thumbs-up {
         color: #FFECB3;
     }
