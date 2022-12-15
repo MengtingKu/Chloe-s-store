@@ -161,7 +161,6 @@ function addLike(e) {
     } catch (e) {
         if (e.message !== Endlterative) throw e;
     }
-    console.log(`jim`);
     axios.post(`${base_url}/600/users/${localId}/likes?_expand=product`,
         {
             "productId": productId
@@ -177,7 +176,12 @@ function addLike(e) {
         })
         .catch(function (error) {
             console.log(error.response.data);
-            sweet2Error(`${error.response.data}`)
+            if (error.response.data === "jwt expired") {
+                sweet2Error(`時間到！請登出後重新登入！`)
+            }
+            if (error.response.data === "jwt malformed") {
+                sweet2Error(`請登入後操作！`)
+            }
         });
 }
 
@@ -278,6 +282,12 @@ function addCartList(e) {
         })
         .catch(function (error) {
             console.log(error.response.data);
+            if (error.response.data === "jwt expired") {
+                sweet2Error(`時間到！請登出後重新登入！`)
+            }
+            if (error.response.data === "jwt malformed") {
+                sweet2Error(`請登入後操作！`)
+            }
         })
 }
 
