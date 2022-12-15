@@ -37,11 +37,10 @@
                             <a class="nav-link active" aria-current="page" href="index.html">首頁</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                產品資訊
+                            <a class="nav-link " href="productList.html">
+                                產品列表
                             </a>
-                            <ul class="dropdown-menu">
+                            <!-- <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="productList.html">必敗商品</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -51,7 +50,7 @@
                                     <hr class="dropdown-divider">
                                 </li>
                                 <li><a class="dropdown-item" href="productList.html">Holy white</a></li>
-                            </ul>
+                            </ul> -->
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="favorite.html">收藏列表</a>
@@ -132,10 +131,9 @@
                 <div class="modal-body">
                     <form class="row g-3 needs-validation registerForm" action="" novalidate>
                         <div class="form-group mb-3">
-                            <label for="accountInput" class="form-label my-2 ps-1 mainFontColor" for="email">帳號</label>
+                            <label for="email" class="form-label my-2 ps-1 mainFontColor">帳號</label>
                             <input class="form-control bg-light border-0 py-2 registerAccount" type="mail"
-                                aria-placeholder="請輸入E-mail" placeholder="請輸入E-mail" id="email" name="帳號" value=""
-                                required>
+                                aria-placeholder="請輸入E-mail" placeholder="請輸入E-mail" id="email" name="帳號" required>
                             <p class="text-danger" data-msg="帳號"></p>
                         </div>
                         <div class="form-group mb-3 eyes">
@@ -143,16 +141,16 @@
                             <input class="form-control bg-light border-0 py-2 registerPassword" type="password"
                                 maxlength="8" minlength="8" aria-placeholder="請輸入密碼" placeholder="英文搭配數字共8碼" value=""
                                 id="entercode" name="密碼" required>
-                            <i class="fa-solid fa-eye-slash watchR"></i>
                             <p class="text-danger" data-msg="密碼"></p>
+                            <i class="fa-solid fa-eye-slash watchR"></i>
                         </div>
                         <div class="form-group mb-3 eyes">
                             <label class="form-label my-2 ps-1 mainFontColor" for="entercodeagain">確認密碼</label>
                             <input class="form-control bg-light border-0 py-2 registerPasswordCheck" type="password"
                                 maxlength="8" minlength="8" aria-placeholder="請輸入密碼" placeholder="再次輸入上面的密碼"
                                 id="entercodeagain" value="" name="確認密碼" required>
-                            <i class="fa-solid fa-eye-slash watchRC"></i>
                             <p class="text-danger" data-msg="確認密碼"></p>
+                            <i class="fa-solid fa-eye-slash watchRC"></i>
                         </div>
                     </form>
                 </div>
@@ -183,16 +181,16 @@
                             <input class="form-control bg-light border-0 py-2 changePassword" type="password"
                                 maxlength="8" minlength="8" aria-placeholder="請輸入密碼" placeholder="英文搭配數字共8碼" value=""
                                 id="changeCode" name="設定新密碼" required>
-                            <i class="fa-solid fa-eye-slash watch"></i>
                             <p class="text-danger" data-msg="設定新密碼"></p>
+                            <i class="fa-solid fa-eye-slash watch"></i>
                         </div>
                         <div class="form-group mb-3 eyes">
                             <label class="form-label my-2 ps-1 mainFontColor" for="changeCodeAgain">確認密碼</label>
                             <input class="form-control bg-light border-0 py-2 changePasswordCheck" type="password"
                                 maxlength="8" minlength="8" aria-placeholder="請輸入密碼" placeholder="再次輸入上面的密碼"
                                 id="changeCodeAgain" value="" name="確認新密碼" required>
-                            <i class="fa-solid fa-eye-slash watch1"></i>
                             <p class="text-danger" data-msg="確認新密碼"></p>
+                            <i class="fa-solid fa-eye-slash watch1"></i>
                         </div>
                     </form>
                 </div>
@@ -239,7 +237,7 @@
                             data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             隱藏購物車細節
                         </button>
-                        <p class="fs-4 ms-auto fw-bold my-auto pe-3 totalCost">$1,970</p>
+                        <p class="fs-4 ms-auto fw-bold my-auto pe-3">$ <span class="totalCost">0</span> </p>
                     </h2>
                 </div>
             </div>
@@ -256,13 +254,13 @@
                             <tr class="fs-4 mainFontColor">
                                 <th width="22%"></th>
                                 <th>商品名稱</th>
-                                <th width="15%">單價</th>
-                                <th width="20%">數量</th>
-                                <th class="text-end">小計</th>
+                                <th class="text-end pe-5" width="15%">單價</th>
+                                <th class="text-end" width="20%">數量</th>
+                                <th class="text-end" width="15%">小計</th>
                             </tr>
                         </thead>
 
-                        <tbody class="fw-light fs-5 cartableList">
+                        <tbody class="fw-light cartableList">
                             <!-- <tr class="border-bottom">
                                 <td class="d-flex justify-content-md-evenly align-items-center">
                                     <a class="subColor" href="#" data-title="3+1極致素顏面膜" data-bs-toggle="modal"
@@ -318,10 +316,12 @@
                         <tfoot class="">
                             <tr class="h5 text-end fw-bolder mainFontColor">
                                 <td class="text-start">
-                                    <a href="#" class="btn btn-outline-success">刪除所有品項</a>
+                                    <button type="button" class="btn btn-outline-warning shadow-sm deleteCartsAll">
+                                        <i class="fa-solid fa-trash-can pe-2"></i> 刪除所有品項
+                                    </button>
                                 </td>
                                 <td colspan="3">合計</td>
-                                <td>$ <span>1,970</span></td>
+                                <td>$ <span class="totalCost">0</span></td>
                             </tr>
                         </tfoot>
                     </table>
@@ -330,12 +330,14 @@
 
             <!-- 訂購人資訊填寫 -->
             <h2 class="bg-light p-3 fs-4 text-center fw-semibold my-3 mainFontColor">訂購人資訊</h2>
-            <form action="" class="orderInf">
+            <form action="" class="orderInf needs-validation js-form ">
                 <div class="row g-3 my-3 justify-content-md-center orderInfo-formGroup">
-                    <label for="userName" class="col-md-2 form-label">姓名 Name</label>
+                    <label for="username" class="col-md-2 form-label">姓名 Name</label>
                     <div class="col-md-8">
-                        <input type="name" class="form-control" id="userName" placeholder="麥兜兜" name="姓名" required>
-                        <p class="orderInfo-message name" data-message="姓名"></p>
+                        <input type="name" class="form-control" id="username" placeholder="麥兜兜" name="姓名" required>
+                        <p class="orderInfo-message name invalid-feedback" data-msg="姓名" id="userNameFeedback">Your
+                            username is required.
+                        </p>
                     </div>
                 </div>
                 <div class="row g-3 my-3 justify-content-md-center orderInfo-formGroup">
@@ -343,15 +345,17 @@
                     <div class="col-md-8">
                         <input type="email" class="form-control" id="inputEmail" placeholder="chloe@gmail.com"
                             name="電子信箱" required>
-                        <p class="orderInfo-message mail" data-message="電子信箱"></p>
+                        <p class="orderInfo-message mail invalid-feedback" data-msg="電子信箱" id="inputEmailFeedback">
+                            Please enter a valid email address for shopping updates.</p>
                     </div>
                 </div>
                 <div class="row g-3 my-3 justify-content-md-center orderInfo-formGroup">
                     <label for="inputTel" class="col-md-2 form-label">手機電話 Tel</label>
                     <div class="col-md-8">
-                        <input type="tel" class="form-control" id="inputTel" placeholder="0911123123" name="手機電話"
-                            required>
-                        <p class="orderInfo-message tel" data-message="手機電話"></p>
+                        <input type="tel" class="form-control is-invalid" id="inputTel" placeholder="0911123123"
+                            name="手機電話" required>
+                        <p class="orderInfo-message tel invalid-feedback" data-msg="手機電話" id="inputTelFeedback">Please
+                            provide a valid phone for shopping updates.</p>
                     </div>
                 </div>
                 <div class="row g-3 my-3 justify-content-md-center orderInfo-formGroup">
@@ -359,8 +363,8 @@
                     <div class="col-md-8">
                         <input type="text" class="form-control is-invalid" id="inputAddress" placeholder="台北市重慶南路一段122號"
                             name="送達地址" required>
-                        <p class="orderInfo-message address invalid-feedback" id="inputAddressFeedback"
-                            data-message="送達地址">Please provide a valid address.</p>
+                        <p class="orderInfo-message address invalid-feedback" id="inputAddressFeedback" data-msg="送達地址">
+                            Please provide a valid address.</p>
                     </div>
                 </div>
                 <div class="row g-3 my-3 justify-content-md-center orderInfo-formGroup">
@@ -379,7 +383,7 @@
                 <!-- 流程按鈕 -->
                 <div class="col-12 d-flex justify-content-end my-3">
                     <a href="productList.html" class="btn btn-outline-success">繼續選購</a>
-                    <a href="shoppingOrder.html" class="btn btn-success ms-2">下一步</a>
+                    <button type="button" class="btn btn-success ms-2 orderInfo-btn">送出訂單</button>
                 </div>
             </form>
         </div>
@@ -471,7 +475,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/index.js"></script>
-    <script src="js/cart.js"></script>
+    <script src="js/shoppingCart.js"></script>
 </body>
 
 </html>

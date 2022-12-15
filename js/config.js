@@ -19,7 +19,8 @@ registerBtn.addEventListener("click", function () {
         return;
     }
     if (registerPassword.value !== registerPasswordCheck.value) {
-        sweet2Error(`註冊失敗，兩者密碼不一致`)
+        sweet2Error(`註冊失敗，兩者密碼不一致`);
+        registerForm.reset()
         return;
     }
     let obj = {};
@@ -239,8 +240,8 @@ function toThousands(x) {
 }
 
 // 註冊表單驗證
-const inputs = document.querySelectorAll("input[type=mail],input[type=password]");
-const constraints = {
+const registerInputs = document.querySelectorAll("#email,#entercode,#entercodeagain");
+const registerConstraints = {
     帳號: {
         presence: {
             message: "必填"
@@ -268,13 +269,13 @@ const constraints = {
 };
 
 /* 對每一個 input 綁定監聽事件並且讓她啟動回傳訊息 */
-inputs.forEach((item) => {
+registerInputs.forEach((item) => {
     item.addEventListener("blur", function () {
         // input綁定監聽，然後在下一個同階元素輸入訊息
         item.nextElementSibling.textContent = "";
 
         // 按照文件放入 form 元素和條件都放進驗證，所有條件都回到error上
-        let errors = validate(registerForm, constraints) || "";
+        let errors = validate(registerForm, registerConstraints) || "";
 
         // 回傳印在畫面上
         if (errors) {
@@ -287,7 +288,7 @@ inputs.forEach((item) => {
     });
 });
 
-// 登入表單驗證
+// 登入表單驗證 (ok)
 const loginInputs = document.querySelectorAll("#accountInput,#codeInput");
 const loginConstraints = {
     登入帳號: {

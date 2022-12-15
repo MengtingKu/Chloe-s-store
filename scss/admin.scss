@@ -1,1 +1,13 @@
 @import "index";
+
+.pad-none {
+    @include pad {
+        display: none;
+    }
+}
+
+.phone-none {
+    @include phone {
+        display: none;
+    }
+}

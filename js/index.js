@@ -12,6 +12,12 @@ axios.get(`${base_url}/products`)
         });
         getHotGood()
     })
+    .catch(function (error) {
+        console.log(error);
+        if (error.response.data === "jwt expired") {
+            sweet2Error(`時間到！請登出後重新登入！`)
+        }
+    })
 function getHotGood() {
     let str = '';
     hotGoods.forEach(item => {
@@ -55,6 +61,9 @@ function init() {
         })
         .catch(function (error) {
             console.log(error);
+            if (error.response.data === "jwt expired") {
+                sweet2Error(`時間到！請登出後重新登入！`)
+            }
         })
 }
 init()
@@ -127,7 +136,7 @@ function keywordSearch() {
     getProductList(targetProduct)
 }
 
-/* 點擊加入收藏列表 */
+/* 點擊監聽-收藏.數量.購物車 */
 window.onload = function () {
     productWrap.addEventListener("click", addLike);
     productWrap.addEventListener("click", quantity);
@@ -140,6 +149,8 @@ function addLike(e) {
         return
     };
     let productId = e.target.getAttribute('data-id');
+
+    // js 终止 forEach 循环(https://www.jianshu.com/p/13b5c694372b)
     try {
         likeList.forEach(item => {
             if (productId === item.productId) {
@@ -150,6 +161,7 @@ function addLike(e) {
     } catch (e) {
         if (e.message !== Endlterative) throw e;
     }
+    console.log(`jim`);
     axios.post(`${base_url}/600/users/${localId}/likes?_expand=product`,
         {
             "productId": productId
@@ -187,13 +199,85 @@ function quantity(e) {
 
 /* 點擊加入購物車 */
 function addCartList(e) {
-    console.log(e.target.dataset.btn);
     let btn = e.target.dataset.btn;
     if (btn !== "addCardBtn") {
         return
     };
-    let productId = e.target.dataset.id;
-    let number = e.target.parentNode.parentNode.querySelector('.number').value;
-    let count = Number(number);
-    console.log(productId, number, count);
+
+    // 確認購物車內容
+    let cartList = [];
+
+    axios.get(`${base_url}/600/users/${localId}/carts?_expand=product`, {
+        headers: {
+            "authorization": `Bearer ${localJWT}`
+        }
+    })
+        .then(function (response) {
+
+            // 1-先取得購物車明細
+            cartList = response.data;
+
+            let productId = e.target.dataset.id;
+            let number = e.target.parentNode.parentNode.querySelector('.number').value;
+            let count = Number(number);
+
+            // 2-確認購物車有沒有同產品 id 資料
+            let checkproduct = 0;
+            cartList.forEach(item => {
+                let orderId = item.id;
+
+                // 2-1 相同產品 id 做 patch(db.json會轉字串，留意型態)
+                if (item.productId == productId) {
+                    checkproduct++;
+                    count += item.quantity;
+                    axios.patch(`${base_url}/600/carts/${orderId}`,
+                        {
+                            "quantity": count
+                        }, {
+                        headers: {
+                            "authorization": `Bearer ${localJWT}`
+                        }
+                    })
+                        .then(function (response) {
+                            // console.log(response.data);
+                            sweet2Success(`加入購物車 ･ᴥ･`);
+                            e.target.parentNode.parentNode.querySelector('.number').value = 1;
+                        })
+                        .catch(function (error) {
+                            console.log(error.response.data);
+                            if (error.response.data === "jwt expired") {
+                                sweet2Error(`時間到！請登出後重新登入！`)
+                            }
+                        })
+                }
+            });
+
+            // 2-2 沒有產品 id 做 post
+            if (checkproduct === 0) {
+                let obj = {};
+                obj.productId = Number(productId);
+                obj.quantity = count;
+                obj.userId = Number(localId);
+                axios.post(`${base_url}/600/carts?_expand=product`, obj, {
+                    headers: {
+                        "authorization": `Bearer ${localJWT}`
+                    }
+                })
+                    .then(function (response) {
+                        console.log(response.data);
+                        sweet2Success(`加入購物車 ･ᴥ･`);
+                        e.target.parentNode.parentNode.querySelector('.number').value = 1;
+                    })
+                    .catch(function (error) {
+                        console.log(error.response.data);
+                        if (error.response.data === "jwt expired") {
+                            sweet2Error(`時間到！請登出後重新登入！`)
+                        }
+                    })
+            }
+        })
+        .catch(function (error) {
+            console.log(error.response.data);
+        })
 }
+

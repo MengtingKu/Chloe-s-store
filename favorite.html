@@ -37,11 +37,10 @@
                             <a class="nav-link active" aria-current="page" href="index.html">首頁</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                產品資訊
+                            <a class="nav-link " href="productList.html">
+                                產品列表
                             </a>
-                            <ul class="dropdown-menu">
+                            <!-- <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="productList.html">必敗商品</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -51,7 +50,7 @@
                                     <hr class="dropdown-divider">
                                 </li>
                                 <li><a class="dropdown-item" href="productList.html">Holy white</a></li>
-                            </ul>
+                            </ul> -->
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="favorite.html">收藏列表</a>
@@ -132,10 +131,9 @@
                 <div class="modal-body">
                     <form class="row g-3 needs-validation registerForm" action="" novalidate>
                         <div class="form-group mb-3">
-                            <label for="accountInput" class="form-label my-2 ps-1 mainFontColor" for="email">帳號</label>
+                            <label for="email" class="form-label my-2 ps-1 mainFontColor">帳號</label>
                             <input class="form-control bg-light border-0 py-2 registerAccount" type="mail"
-                                aria-placeholder="請輸入E-mail" placeholder="請輸入E-mail" id="email" name="帳號" value=""
-                                required>
+                                aria-placeholder="請輸入E-mail" placeholder="請輸入E-mail" id="email" name="帳號" required>
                             <p class="text-danger" data-msg="帳號"></p>
                         </div>
                         <div class="form-group mb-3 eyes">
@@ -143,16 +141,16 @@
                             <input class="form-control bg-light border-0 py-2 registerPassword" type="password"
                                 maxlength="8" minlength="8" aria-placeholder="請輸入密碼" placeholder="英文搭配數字共8碼" value=""
                                 id="entercode" name="密碼" required>
-                            <i class="fa-solid fa-eye-slash watchR"></i>
                             <p class="text-danger" data-msg="密碼"></p>
+                            <i class="fa-solid fa-eye-slash watchR"></i>
                         </div>
                         <div class="form-group mb-3 eyes">
                             <label class="form-label my-2 ps-1 mainFontColor" for="entercodeagain">確認密碼</label>
                             <input class="form-control bg-light border-0 py-2 registerPasswordCheck" type="password"
                                 maxlength="8" minlength="8" aria-placeholder="請輸入密碼" placeholder="再次輸入上面的密碼"
                                 id="entercodeagain" value="" name="確認密碼" required>
-                            <i class="fa-solid fa-eye-slash watchRC"></i>
                             <p class="text-danger" data-msg="確認密碼"></p>
+                            <i class="fa-solid fa-eye-slash watchRC"></i>
                         </div>
                     </form>
                 </div>
@@ -183,16 +181,16 @@
                             <input class="form-control bg-light border-0 py-2 changePassword" type="password"
                                 maxlength="8" minlength="8" aria-placeholder="請輸入密碼" placeholder="英文搭配數字共8碼" value=""
                                 id="changeCode" name="設定新密碼" required>
-                            <i class="fa-solid fa-eye-slash watch"></i>
                             <p class="text-danger" data-msg="設定新密碼"></p>
+                            <i class="fa-solid fa-eye-slash watch"></i>
                         </div>
                         <div class="form-group mb-3 eyes">
                             <label class="form-label my-2 ps-1 mainFontColor" for="changeCodeAgain">確認密碼</label>
                             <input class="form-control bg-light border-0 py-2 changePasswordCheck" type="password"
                                 maxlength="8" minlength="8" aria-placeholder="請輸入密碼" placeholder="再次輸入上面的密碼"
                                 id="changeCodeAgain" value="" name="確認新密碼" required>
-                            <i class="fa-solid fa-eye-slash watch1"></i>
                             <p class="text-danger" data-msg="確認新密碼"></p>
+                            <i class="fa-solid fa-eye-slash watch1"></i>
                         </div>
                     </form>
                 </div>

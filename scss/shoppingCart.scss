@@ -1,3 +1,14 @@
 @import "index";
 
-
+.deleteCartsAll{
+    &:hover{
+        color: #fff;
+        background-color: red;
+    }
+}
+.delCartsItem{
+    color: gold;
+    &:hover{
+        color: red;
+    }
+}

@@ -203,7 +203,7 @@ body {
     min-height: 350px;
   }
 }
-@media (max-width: 367px) {
+@media (max-width: 420px) {
   .banner {
     background-image: url(https://i.imgur.com/1wZa2pt.jpg);
     min-height: 200px;
@@ -240,7 +240,7 @@ body {
     display: none;
   }
 }
-@media (max-width: 367px) {
+@media (max-width: 420px) {
   .advantage {
     display: none;
   }
@@ -323,7 +323,7 @@ body {
 .notice {
   background-color: rgba(236, 239, 140, 0.4117647059);
 }
-@media (max-width: 367px) {
+@media (max-width: 420px) {
   .notice p {
     font-size: 18px;
   }
@@ -335,7 +335,7 @@ body {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
-@media (max-width: 367px) {
+@media (max-width: 420px) {
   .notice img {
     max-height: 150px;
   }

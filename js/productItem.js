@@ -52,7 +52,7 @@ axios.get(`${base_url}/products/${id}`)
                                 </div>
                             </div>
                             <div class="col-lg-6 mb-2">
-                                <button type="button" class="btn btn-outline-success btn-sm w-100" data-id="${item.id}"> 加入購物車 <i
+                                <button type="button" class="btn btn-outline-success btn-sm w-100" data-btn="addCardBtn" data-id="${item.id}"> 加入購物車 <i
                                 class="fa-solid fa-cart-shopping ps-2"></i></button>
                             </div>
                             <div class="col-lg-6 mb-2">
@@ -107,7 +107,8 @@ axios.get(`${base_url}/products/${id}`)
 /* 點擊加入收藏列表 */
 window.onload = function () {
     productItem.addEventListener("click", addLike);
-    productItem.addEventListener("click", quantity)
+    productItem.addEventListener("click", quantity);
+    productItem.addEventListener("click", addCartList)
 }
 let likeList = [];
 getLikeList()
@@ -174,3 +175,82 @@ function quantity(e) {
     }
     e.target.parentNode.querySelector('.number').value = count;
 }
+
+/* 點擊加入購物車 */
+function addCartList(e) {
+    let btn = e.target.dataset.btn;
+    if (btn !== "addCardBtn") {
+        return
+    };
+
+    // 確認購物車內容
+    let cartList = [];
+
+    axios.get(`${base_url}/600/users/${localId}/carts?_expand=product`, {
+        headers: {
+            "authorization": `Bearer ${localJWT}`
+        }
+    })
+        .then(function (response) {
+
+            // 1-先取得購物車明細
+            cartList = response.data;
+
+            let productId = e.target.dataset.id;
+            let number = e.target.parentNode.parentNode.querySelector('.number').value;
+            let count = Number(number);
+
+            // 2-確認購物車有沒有同產品 id 資料
+            let checkproduct = 0;
+            cartList.forEach(item => {
+                let orderId = item.id;
+
+                // 2-1 相同產品 id 做 patch(db.json會轉字串，留意型態)
+                if (item.productId == productId) {
+                    checkproduct++;
+                    count += item.quantity;
+                    axios.patch(`${base_url}/600/carts/${orderId}`,
+                        {
+                            "quantity": count
+                        }, {
+                        headers: {
+                            "authorization": `Bearer ${localJWT}`
+                        }
+                    })
+                        .then(function (response) {
+                            // console.log(response.data);
+                            sweet2Success(`加入購物車 ･ᴥ･`);
+                            e.target.parentNode.parentNode.querySelector('.number').value = 1;
+                        })
+                        .catch(function (error) {
+                            console.log(error.response.data);
+                        })
+                }
+            });
+
+            // 2-2 沒有產品 id 做 post
+            if (checkproduct === 0) {
+                let obj = {};
+                obj.productId = Number(productId);
+                obj.quantity = count;
+                obj.userId = Number(localId);
+                axios.post(`${base_url}/600/carts?_expand=product`, obj, {
+                    headers: {
+                        "authorization": `Bearer ${localJWT}`
+                    }
+                })
+                    .then(function (response) {
+                        console.log(response.data);
+                        sweet2Success(`加入購物車 ･ᴥ･`);
+                        e.target.parentNode.parentNode.querySelector('.number').value = 1;
+                    })
+                    .catch(function (error) {
+                        console.log(error.response.data);
+                    })
+            }
+        })
+        .catch(function (error) {
+            console.log(error.response.data);
+        })
+}
+
