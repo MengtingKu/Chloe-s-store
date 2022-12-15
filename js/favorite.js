@@ -68,9 +68,6 @@ function getLikeList() {
             if (error.response.data === "jwt expired") {
                 sweet2Error(`時間到！請登出後重新登入！`)
             }
-            if (error.response.data === "jwt malformed") {
-                sweet2Error(`請登入後操作！`)
-            }
         })
 }
 
