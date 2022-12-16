@@ -1,5 +1,5 @@
-const base_url = `http://localhost:3000`;
-// const base_url = `https://json-server-vercel-dusky.vercel.app/`;
+// const base_url = `http://localhost:3000`;
+const base_url = `https://json-server-vercel-dusky.vercel.app/`;
 const localJWT = localStorage.getItem("token");
 const localId = localStorage.getItem("userId");
 const localstatus = localStorage.getItem("isAdmin");
