@@ -35,11 +35,12 @@ function getLikeList() {
             }
             let str = "";
             likeList.forEach(item => {
+                console.log(item.product.id);
                 str += `
                 <li class="row border rounded-3 gx-5 mb-4 shadow-sm">
                     <!-- 左側照片 -->
                     <div class="col-md-3 flex-shrink-0 d-flex align-items-center">
-                        <a href="productItem1.html?id=${item.id}" class="goodsImg">
+                        <a href="productItem1.html?id=${item.product.id}" class="goodsImg">
                             <img src="${item.product.cart_likes_imgurl}" class="img-fluid rounded-3" alt="goods">
                         </a>
                     </div>
