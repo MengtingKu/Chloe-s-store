@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 // const base_url = `http://localhost:3000`;
-=======
-// const base_url= `http://localhost:3000`;
->>>>>>> 5604d1b0567fbb357e3dee38c7d3b48b6517163c
-const base_url = `https://chloe-store.onrender.com/`;
+const base_url = `https://chloe-store.onrender.com`;
 const localJWT = localStorage.getItem("token");
 const localId = localStorage.getItem("userId");
 const localstatus = localStorage.getItem("isAdmin");
